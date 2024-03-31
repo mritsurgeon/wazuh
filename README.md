@@ -24,3 +24,5 @@ The integration process involves configuring syslog on the Veeam server, enablin
 ## Conclusion:
 
 This integration strengthens backup security by leveraging Veeam's syslog capabilities and Wazuh's comprehensive security monitoring. By following the outlined steps and utilizing the provided decoders and rules, organizations can enhance their defense against cyber threats targeting backup infrastructure. Further customization and refinement of decoders and rules allow for tailored security monitoring based on specific organizational needs. Thank you for exploring this integration and its potential impact on bolstering backup security. Share your feedback and contributions to improve this integration further.
+
+Blog: http://www.mritsurgeon.co.za/2024/03/maximizing-data-security-veeam-wazuh.html 
