@@ -1,0 +1,264 @@
+Event ID;Message Summary;Message Details;Severity;Source
+genral group ;;;;
+31000;General options modified;Backup server general options have been changed.;Info, Warning, Error;
+31100;Network traffic rules updated;Backup server global network traffic rules have been changed.;Info, Warning, Error;
+31500;Configuration backup job updated;Configuration job has been modified.;Info, Warning, Error;
+40100;Shell started;The Veeam Backup & Replication console has been launched.;Info;
+40101;Shell closed;The Veeam Backup & Replication console has been closed.;Info;
+40300;Logs export session finished;Support logs export has been completed. Result: <State name>.;Info;
+40400;Global exclusions added;<N> objects have been added into the global exclusions list.;Info;
+40500;Global exclusions deleted;<N> objects have been removed from the global exclusions list.;Info;
+40600;Global exclusions changed;Global exclusions list has been modified.;Info;
+40700;Configuration backup session finished;Configuration backup has been completed. Result: <State name>.;Info;
+40800;Configuration restore session finished;Configuration restore has been performed.;Info;
+40900;Location added;Location <Location name> has been added.;Info;
+40901;Location modified;Location <Location name> has been modified.;Info;
+40902;Location removed;Location <Location name> has been removed.;Info;
+Licesing group ;;;;
+40903;Object location changed;Object location has been changed.;Info;
+24010;License installed;<License type> License key for Veeam Backup & Replication <Edition> has been installed.;Info;
+24020;License expiring;<License type> License key for Veeam Backup & Replication <Edition> is about to expire in <N> days.;Warning;
+24022;License evaluation expiring;<License type> Evaluation license key for Veeam Backup & Replication <Edition> is about to expire in <N> days.;Warning;
+24030;License expired;<License type> License key for Veeam Backup & Replication <Edition> has expired.;Error;
+24040;License support expiring;Support contract for Veeam Backup & Replication is about to expire in <N> days.;Warning;
+24050;License support expired;Support contract for Veeam Backup & Replication has expired. Contact Veeam sales representative to renew your support contract.;Error;
+24060;License exceeded;License exceeded.;Error;
+24070;License grace period entered;License grace period entered.;Info;
+24080;Part of merged license deleted;<License type> license that was a part of the merged Veeam Backup & Replication license has been removed.;Info;
+41300;License report;Product license consumption report was created by <Initiator name>.;Info;
+41301;License auto update;Update license automatically was <Enabled/Disabled> by <Initiator name>.;Info;
+41302;License unlicensed agent;Allow unlicensed agent to consume instances was <Enabled/Disabled> by <Initiator name>.;Info;
+41303;License revoke;License revocation was initiated for objects <Object names> by <Initiator name>.;Info;
+41304;License remove;License removal was initiated for objects <Object names> by <Initiator name>.;Info;
+41305;License assign;<License mode> license was assigned to objects <Object names> by <Initiator name>.;Info;
+Security group ;;;;
+25300;Credentials record added;Credentials <Credentials> have been added.;Info, Warning, Error;
+25400;Credentials record updated;Credentials <Credentials> have been updated.;Info, Warning, Error;
+25500;Credentials record deleted;Credentials <Credentials> have been deleted.;Info, Warning, Error;
+31210;User or group failed to add;Failed to add a user or a group: <User name/Group name>.;Info;
+31600;Password added to the password manager;Encryption password <Password ID> has been added.;Info, Warning, Error;
+31700;Password stored in the password manager changed;Encryption password <Password ID> has been changed.;Info, Warning, Error;
+31800;Encryption password deleted;Encryption password <Password ID> has been deleted.;Info, Warning, Error;
+31900;SSH credentials updated;SSH options for credentials <Credentials> have been updated.;Info, Warning, Error;
+40200;Global MFA enabled;Multi-factor authentication has been enabled by <Initiator name>.;Info;
+40201;Global MFA disabled;Multi-factor authentication has been disabled by <Initiator name>.;Info;
+40202;MFA reset user token;Multi-factor authentication token has been reset for <User name> by <Initiator name>.;Info;
+40203;User MFA enabled;Multi-factor authentication has been disabled for <User name> by <Initiator name>.;Info;
+40204;User MFA disabled;Multi-factor authentication token has been disabled for <User name> by <Initiator name>.;Info;
+40205;Invalid MFA code;Invalid MFA code has been entered for <User name>.;Info;
+40206;User blocked;<User name> has been locked out by entering too many invalid MFA codes.;Info;
+40903;Object location changed;Object location has been changed.;Info;
+41600;Malware activity detected;Potential malware activity <Activity name> has been detected for <Restore point ID> <Machine name> by <User name>. Rule name: <Rule name>.;Warning;
+41610;Malware detection event resolved;Malware detection event has been resolved for <Restore point ID> by <User name>. False positive: <State name>.;Info;
+42200;Malware detection session started;Malware detection session has been started.;Info;
+42210;Malware detection session finished;Malware detection session has been finished with <State name>.;Info, Warning, Error;
+42220;Restore point marked as infected;Restore point has been marked as infected by <User name>.;Info;
+42230;Restore point marked as clean;Restore point has been marked as clean by <User name>.;Info;
+42260;Objects added to the malware exclusions list;<N> objects have been added to the malware exclusions list.;Info;
+42270;Objects removed from the malware exclusions list;<N> objects have been removed from the malware exclusions list.;Info;
+42280;Malware exclusions list modified;Malware exclusions list has been modified.;Info;
+42290;Malware detection settings changed;Malware detection settings have been changed.;Info;
+42300;KMS added;KMS server <Host name> has been added.;Info;
+42301;KMS deleted;KMS server <Host name> has been deleted.;Info;
+42302;KMS updated;KMS server <Host name> settings has been changed.;Info;
+42400;Four-eyes authorization enabled;Four-eyes authorization has been enabled by <Initiator name>.;Info;
+42401;Four-eyes authorization disabled;Four-eyes authorization has been disabled by <Initiator name>.;Info;
+42402;Four-eyes authorization request initiated;<Operation name> has been initiated by <Initiator name> and requires an additional approval.;Info;
+42403;Four-eyes authorization request approved;<Operation name> initiated by <Initiator name> has been approved by <User name>.;Info;
+42404;Four-eyes authorization request rejected;<Operation name> initiated by <Initiator name> has been rejected by <User name>.;Info;
+42405;Four-eyes authorization request expired;<Operation name> initiated by <Initiator name> has expired while waiting for additional approval and was auto-rejected.;Info;
+42500;KMS key rotation finished;KMS key rotation has been completed with <State name>.;Info;
+Server and hosts group ;;;;
+25600;Host added;New hypervisor host has been added.;Info, Warning, Error;
+25700;Host deleted;Hypervisor host has been deleted.;Info, Warning, Error;
+25800;Host updated;Hypervisor host has been updated.;Info, Warning, Error;
+28300;Host added;Host <Host name> (<Host type>) has been created.;Info, Warning, Error;
+28400;Host updated;Host <Host name> (<Host type>) has been modified.;Info, Warning, Error;
+28500;Host deleted;Host <Host name> (<Host type>) has been deleted.;Info, Warning, Error;
+32900;Component installed or updated;Component <Component name> on host <Host name> has been installed or upgraded.;Info, Warning, Error;
+41400;Storage added;Storage <Host name> has been created.;Info;
+41401;Storage modified;Storage <Host name> has been modified.;Info;
+41402;Storage deleted;Storage <Host name> has been deleted.;Info;
+Repository group ;;;;
+21220;Repository server established connection;Connection to backup repository <Repository name> has been restored.;Info;
+21224;Repository server lost connection;Backup server has lost connection to backup repository <Repository name>.;Error;
+26500;Maintenance mode of scale-out backup repository changed;Extent <ID> Maintenance mode has been changed. New mode is <New status>.;Info;
+28000;Repository created;Backup repository <Repository name> (<Repository type>) has been created.;Info;
+28100;Repository modified;Backup repository <Repository name> (<Repository type>) has been modified.;Info;
+28200;Repository deleted;Backup repository <Repository name> (<Repository type>) has been deleted.;Info;
+29700;Object storage repository created;Object storage repository <Repository name> has been created.;Info;
+29800;Object storage repository modified;Object storage repository <Repository name> has been modified.;Info;
+29900;Object storage repository deleted;Object storage repository <Repository name> has been deleted.;Info;
+30000;Scale-out backup repository created;Scale-out backup repository <Repository name> has been created.;Info;
+30100;Scale-out backup repository modified;Scale-out backup repository <Repository name> has been modified.;Info;
+30200;Scale-out backup repository deleted;Scale-out backup repository <Repository name> has been deleted.;Info;
+32000;External repository created;External repository <Repository name> (<Repository type>) has been created.;Info;
+32100;External repository modified;External repository <Repository name> (<Repository type>) has been modified.;Info;
+32200;External repository deleted;External repository <Repository name> (<Repository type>) has been deleted.;Info;
+40002;Management session finished;The storage management session for repository <Repository name> has finished: <State name>.;Info, Warning, Error;
+;;Repository name: <Repository name>;;
+;;Job type: <Offload/Archiving/Download>;;
+;;Session result: <Successful/Warning/Failed>;;
+Proxy group ;;;;
+21210;Proxy server established connection;Connection to backup proxy <Proxy name> has been restored.;Info;
+21214;Proxy server lost connection;Backup server has lost connection to backup proxy <Proxy name>.;Error;
+27700;Backup proxy created;Backup proxy <Proxy name> (<Proxy type>) has been created.;Info;
+27800;Backup proxy modified;Backup proxy <Proxy name> (<Proxy type>) has been modified.;Info;
+27900;Backup proxy deleted;Backup proxy <Proxy name> (<Proxy type>) has been deleted.;Info;
+Wan Accelerator Group;;;;
+21230;WAN accelerator established connection;Connection to WAN accelerator <WAN name> has been restored.;Info;
+21234;WAN accelerator lost connection;Backup server has lost connection to WAN accelerator <WAN name>.;Error;
+27100;WAN accelerator created;WAN accelerator <WAN name> has been created.;Info;
+27200;WAN accelerator modified;WAN Accelerator <WAN name> has been modified.;Info;
+27300;WAN accelerator deleted;WAN Accelerator <WAN name> has been deleted.;Info;
+33000;WAN accelerator cache populated;Cache of WAN accelerator <WAN name> has been populated.;Info;
+33001;WAN accelerator cache cleared;Cache of WAN accelerator <WAN name> has been cleared.;Info;
+Jobs Group;;;;
+110;Backup job started;<Job type> job <Job name> has been started.;Info;Backup
+150;Backup task finished;VM <Task name> task has finished with <State name>.;Info;Backup, Replication, SureBackup
+190;Backup job finished;The <Job type> job <Job name> has finished with <State name>.;Info, Warning, Error;Backup
+410;Backup copy job started;<Job type> job <Job name> has been started.;Info;Backup copy
+450;Backup copy task finished;VM <Task name> task has finished with <State name>.;Info, Warning, Error;Backup copy
+490;Backup copy job finished;The <Job type> job <Job name> has finished with <State name>.;Info, Warning, Error;Backup copy
+510;File copy job started;<Job type> job <Job name> has been started.;Info;File copy
+512;VM copy job started;<Job type> job <Job name> has been started.;Info;VM copy
+590;File copy job finished;The <Job type> job <Job name> has finished with <State name>.;Info, Warning, Error;File copy
+592;VM copy job finished;The <Job type> job <Job name> has finished with <State name>.;Info, Warning, Error;VM copy
+610;Quick migration job has been finished;Quick Migration job finished with <State name>.;Info, Warning, Error;Quick migration
+710;Veeam Agent backup job started;Agent Backup job <Job name> has been started.;Info;Veeam Agent backup
+790;Veeam Agent backup job finished;Agent Backup job <Job name> finished with <State name>. Job details: <Description>.;Info, Warning, Error;Veeam Agent backup
+810;Rescan job started (Veeam Agent);Rescan job <Job name> has been started.;Info;Rescan job (Veeam Agent)
+890;Rescan job finished (Veeam Agent);Rescan job <Job name> has been finished with <State name>. Job details: <Description>.;Info, Warning, Error;Rescan job (Veeam Agent)
+10010;Restore point created;VM <VM name> restore point has been created.;Info;
+10050;Restore point removed;Restore point for VM <VM name> has been removed.;Info;
+10090;Restore point updated;VM <VM name> restore point has been modified.;Info;
+23010;Job created;The <Job type> job <Job name> has been created.;Info;
+23050;Job modified;The <Job type> job <Job name> has been modified.;Info, Warning, Error;
+23090;Job deleted;The <Job type> job <Job name> has been deleted.;Info;Backup, Replication, Backup copy
+23110;Job objects added;<N> objects have been created for <Job name>.;Info;Backup, Replication, Backup copy
+23130;Job objects modified;<N> objects have been modified for <Job name>.;Info;Backup, Replication, Backup copy
+23410;Second destination job assigned;<Job name> job has been assigned as secondary destination for <N> jobs.;Info;Backup copy
+23420;Second destination job removed;<Job name> job has been removed as secondary destination for <N> jobs.;Info;Backup copy
+25900;Failover plan created;New failover plan has been created.;Info;Replication
+26000;Failover plan updated;Failover plan has been updated.;Info;Replication
+26100;Failover plan deleted;Failover plan has been deleted.;Info;Replication
+26600;Failover plan started;Failover plan was started.;Info;Replication
+26700;Failover plan stopped;Failover plan was stopped.;Info;Replication
+32120;Job objects deleted;<N> objects have been deleted for <Job name>.;Info;Backup, Replication, Backup copy
+40002;Offload/Download/Archiving job finished;The storage management session for repository <Repository name> has finished: <State name>.;Info, Warning, Error;Offload/Download/Archiving job
+41200;Detach job;Detach backup from job <Source name> has been initiated by <Initiator name>.;Info;Backup move/copy
+41201;Copy backup;Copy backups from <Source name> to <Target name> has been initiated by <Initiator name>.;Info;Backup copy
+41202;Move backup;Move backups from <Source name> to <Target name> has been initiated by <Initiator name>.;Info;Backup move
+41700;Health check job started;Health check session <Job name> has been started.;Info;
+41710;Health check job finished;Health check session <Job name> has been finished with <State name> state.;Info, Warning, Error;
+Nas backup group ;;;;
+151;Task finished;Source <Task name> task has finished with <State name> state.;Info;
+451;Copy task finished;Source <Source name> task has finished with <State name> state.;Info;
+600;Migration job started;<Job type> job has been started by user <Domain>\<User name>.;Info;
+601;Migration switchover job started;<Job type> switchover job has been started by user <Domain>\<User name>.;Info;
+610;Migration job finished;<Job type> job finished with <State name>.;Info;
+28900;File share created;File share <Server name> (<Server type>) has been created.;Info;
+28910;File share modified;File share <Server name> (<Server type>) has been modified.;Info;
+28920;File share deleted;File share <Server name> (<Server type>) has been deleted.;Info;
+28930;File server created;File server <Server name> has been created.;Info;
+28940;File server modified;File server <Server name> has been modified.;Info;
+28950;File server deleted;File server <Server name> has been deleted.;Info;
+41000;NAS backup download meta started;NAS backup metadata download has been started for backup <Backup name> by <User name>.;Info;
+41001;NAS backup download meta finished;NAS backup metadata download for backup <Backup name> has been finished. Result: <State name>.;Inf;
+Restore group ;;;;
+210;Restore session started;Restore session has been initiated by <User name>.;Info;
+250;Restore VI task finished;Restore for <Object name> has finished with <State name> state.;Info, Warning, Error;
+290;Restore session finished;The restore session has finished with <State name> state.;Info, Warning, Error;
+600;Migration job started;<Job type> job has been started by user <Domain>\<User name>.;Info;
+601;Migration switchover job started;<Job type> switchover job has been started by user <Domain>\<User name>.;Info;
+40210;Restore session started (new);<Session type> session has been initiated by <Initiator name>.;Info;
+40290;Restore session finished (new);The <Session type> session has finished with <State name> state + info.;Info, Warning, Error;
+41500;Restore point mounted;Backup has been mounted. MountID: <ID>.;Info;
+41510;Restore point unmounted;Backup has been unmounted. MountID: <ID>.;Info;
+Sure Backup group;;;;
+310;SureBackup job started;<Job type> job <Job name> has been started.;Info;
+350;SureBackup VI verification task finished;VM <VM name> verification task has finished with <State name> state.;Info, Warning, Error;
+351;SureBackup VI validation task finished;VM <VM name> validation task has finished with <State name> state.;Info, Warning, Error;
+390;SureBackup job finished;The <Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+23210;SureBackup job created;The SureBackup job <Job name> has been created.;Info;
+23220;SureBackup job modified;The SureBackup job <Job name> has been modified.;Info;
+23230;SureBackup job deleted;The SureBackup job <Job name> has been deleted.;Info;
+23310;SureBackup objects added;<N> objects have been created for <Job name>.;Info;
+23320;SureBackup objects deleted;<N> objects have been deleted from <Job name>.;Info;
+30300;Application group added;Application group <Group name> has been added.;Info;
+30400;Application group modified;Application group <Group name> has been modified.;Info;
+30500;Application group deleted;Application group <Group name> has been deleted.;Info;
+30600;Virtual lab created;Virtual lab <Lab name> has been created.;Info;
+30700;Virtual lab modified;Virtual lab <Lab name> has been modified.;Info;
+30800;Virtual lab deleted;Virtual lab <Lab name> has been deleted.;Info;
+Tape group ;;;;
+114;Tape backup job started;<Job type> job <Job name> has been started.;Info;
+115;Tape erase job started;<Job type> job <Job name> has been started.;Info;
+116;Tape inventory job started;<Job type> job <Job name> has been started.;Info;
+117;Tape catalog job started;<Job type> job <Job name> has been started.;Info;
+118;Tape verification job started;<Job type> job <Job name> has been started.;Info;
+119;Tape export job started;<Job type> job <Job name> has been started.;Info;
+120;Tape copy job started;<Job type> job <Job name> has been started.;Info;
+121;Tape eject job started;<Job type> job <Job name> has been started.;Info;
+122;Tape mark as free job started;<Job type> job <Job name> has been started.;Info;
+123;Tape move to media pool job started;<Job type> job <Job name> has been started.;Info;
+124;Tape delete from library job started;<Job type> job <Job name> has been started.;Info;
+125;Tape libraries discover job started;<Job type> job <Job name> has been started.;Info;
+126;Tape import job started;<Job type> job <Job name> has been started.;Info;
+194;Tape backup job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+195;Tape erase job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+196;Tape inventory job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+197;Tape catalog job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+198;Tape verification job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+199;Tape export job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+200;Tape copy job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+203;Tape eject job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+204;Tape mark as free job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+205;Tape move to media pool job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+206;Tape delete from library job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+207;Tape libraries discover job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+208;Tape import job finished;<Job type> job <Job name> has finished with <State name> state.;Info, Warning, Error;
+10014;Tape restore point created;VM <Task name> restore point has been offloaded to the tape <Barcode>.;Info;
+20114;Tape updated;Tape <Barcode> has been renamed.;Info;
+23440;Tape backup job created;<Job type> <Job name> has been created.;Info;
+23450;Tape backup job modified;<Job type> <Job name> has been modified.;Info;
+23490;Tape backup job deleted;<Job type> <Job name> has been deleted.;Info;
+23610;Tape media pool created;Tape media pool <Object name> has been created.;Info;
+23611;Tape media vault created;Media vault <Object name> has been created.;Info;
+23612;Tape medium created;Tape medium <Object name> has been created.;Info;
+23620;Tape media pool modified;Tape media pool <Object name> has been modified.;Info;
+23621;Tape media vault modified;Media vault <Object name> has been modified.;Info;
+23622;Tape medium modified;Tape medium <Object name> has been modified.;Info;
+23623;Tape library modified;Tape library <Object name> has been modified.;Info;
+23630;Tape media pool deleted;Tape media pool <Object name> has been deleted.;Info;
+23631;Tape media vault deleted;Media vault <Object name> has been deleted.;Info;
+23632;Tape medium deleted;Tape medium <Object name> has been deleted.;Info;
+23633;Tape library deleted;Tape library <Object name> has been deleted.;Info;
+28600;Tape server created;Tape server <Server name> has been created.;Info;
+28650;NDMP server added;NDMP server <Server name> has been created.;Info;
+28700;Tape server modified;Tape server <Server name> has been modified.;Info;
+28750;NDMP server modified;NDMP server <Server name> has been modified.;Info;
+28800;Tape server deleted;Tape server <Server name> has been deleted.;Info;
+Agents;;;;
+10010;Restore point created;VM <VM name> restore point has been created.;Info;
+10050;Restore point removed;Restore point for VM <VM name> has been removed according to the configured retention policy.;Info;
+23010;Job created;The <Job type> job <Job name> has been created.;Info;
+23050;Job modified;The <Job type> job <Job name> has been modified.;Info,;
+;;;Warning, Error;
+23090;Job deleted;The <Job type> job <Job name> has been deleted.;Info;
+29100;Protection group added;Protection group <Group name> has been added.;Info;
+29110;Protection group modified;Protection group <Group name> has been modified.;Info;
+29120;Protection group deleted;Protection group <Group name> has been deleted.;Info;
+29130;Protection group items added;Protection group <Group name> scope has been increased.;Info;
+29140;Protection group items modified;Protection group <Group name> scope has been modified.;Info;
+29150;Protection group items removed;Protection group <Group name> scope has been decreased.;Info;
+36011;EP recovery token created;Recovery token has been created. Token ID: <ID>, Access list: <Access list>, Initiator: <Initiator name>, Expiration Date UTC: <Date>.;Info;
+36012;EP recovery token update;Recovery token has been updated. Token ID: <ID>, Access list: <Access list>, Initiator: <Initiator name>, Expiration Date UTC: <Date>.;Info;
+36013;EP recovery token removed;Recovery token has been removed. Token ID: <ID>, Access list: <Access list>, Initiator: <Initiator name>.;Info;
+36014;EP recovery token authenticate;Recovery token has been authenticated. Token ID: <ID>, Access list: <Access list>, Client: <Client>.;Info;
+36021;EP plugin data policy started;Application Backup Policy for <Job name> has been started.;Info;
+36022;EP plugin data policy finished;Application Backup Policy job <Job name> finished with <Success/Warning/Failed>.;Info, Warning, Error;
+36023;EP plugin data policy task started;Backup of <Database path> with <Job name> policy has been started. Initiator: <Initiator name>.;Info;
+36024;EP plugin data policy task finished;Backup of <Database path> with <Job name> policy has been completed.;Info;
+36025;EP plugin log policy started;Application Log Policy for <Job name> has been started.;Info;
+36026;EP plugin log policy finished;Application Log Policy job <Job name> finished with <Success/Warning/Failed>.;Info, Warning, Error;

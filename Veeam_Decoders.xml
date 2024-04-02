@@ -1,0 +1,164 @@
+<!-- Veeam -->
+<!-- syslog Log Decoders Veeam Logs -->
+<!-- Author - Ian Engelbrecht -->
+
+<decoder name="Veeam MP">
+    <prematch type="pcre2">Veeam_MP - - \[origin enterpriseId="([^"]+)"\] \[categoryId=([^\s]+) instanceId=([^\s]+)</prematch>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">by user (.*?)</regex>
+    <order>User</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">VmName="([^"]+)"</regex>
+    <order>VmName</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">UserName="([^"]+)</regex>
+    <order>User</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="([^"]+)</regex>
+    <order>Description</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="([^"]+) job '([^"]+)' has been</regex>
+    <order>Job, JobName</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">has been ([^"]+) by user ([^"]+)."</regex>
+    <order>State, User</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="([^"]+) Backup job</regex>
+    <order>Workload</order>
+</decoder>
+
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="Backup repository (.*?) has been (.*?)"</regex>
+    <order>Repository, State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">fullName="(.*?)"</regex>
+    <order>SrcUser</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) have been (.*?)"</regex>
+    <order>Object, State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="Credentials (.*?) have been (.*?)"</regex>
+    <order>DstUser, State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="User or group (.*?) has been (.*?)"</regex>
+    <order>TargetUser, State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) or group </regex>
+    <order>Object</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">has been (.*?) by user (.*?)</regex>
+    <order>State, User </order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) for VM '(.*?)'</regex>
+    <order>Object, VM </order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">job '(.*?)' has been (.*?)"</regex>
+    <order>JobName, State </order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) authorization has been (.*?) by (.*?)."</regex>
+    <order>Object, State, User</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">has been (.*?) by (.*?)."</regex>
+    <order>State, User</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) has been (.*?)."</regex>
+    <order>Object</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">has been (.*?)."</regex>
+    <order>State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">property name="(.*?)"</regex>
+    <order>property</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Job details: Processing target"]'(.*?)' finished</regex>
+    <order>JobName</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) has finished with (.*?)."</regex>
+    <order>Object, State</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="(.*?) have been (.*?) by the (.*?) for OIB: (.*?),</regex>
+    <order>Detected, State, Process, Target</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Version (.*?) Cannot find a clean restore point in the selected time range"]</regex>
+    <order>Target</order>
+</decoder>
+
+<decoder name="General">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Cannot find a clean restore point in the selected time range"\](.*)</regex>
+    <order>Scan</order>
+</decoder>
