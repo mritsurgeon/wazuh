@@ -33,6 +33,7 @@ In the generic rules XML file, you'll find rules that cover all event IDs genera
   <description>$(Description)</description>
   <field name="EventID">28700</field>
 </rule>
+```
 
 - Rule ID: A unique identifier for the rule.
 - Level: The severity level assigned to events captured by this rule.
@@ -52,6 +53,7 @@ In the field-specific rules XML file, you'll find rules that utilize specific fi
   <field name="Object">Backup</field>
   <field name="State">^mounted.|unmounted.</field>
 </rule>
+```
 
 - Rule ID, Level, Decoded_as, and Description: Similar to the generic rules.
 - Field: Specifies the fields within the event data that the rule is targeting for correlation. Here, it's looking at the "Object" field with the value "Backup" and the "State" field with values matching the regular expression pattern "^mounted." or "unmounted."
