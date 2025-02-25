@@ -1,0 +1,1511 @@
+<!-- Veeam -->
+<!-- syslog Log rules Veeam Logs Using Event IDs -->
+<!-- Author - Ian Engelbrecht -->
+
+
+<!-- Veeam General Event IDs-->
+
+<group name="Veeam General">
+  <rule id="100100" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31000</field>
+  </rule>
+
+  <rule id="100101" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31100</field>
+  </rule>
+
+  <rule id="100102" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31500</field>
+  </rule>
+
+  <rule id="100103" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40100</field>
+  </rule>
+
+  <rule id="100104" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40101</field>
+  </rule>
+
+  <rule id="100105" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40300</field>
+  </rule>
+
+  <rule id="100106" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40400</field>
+  </rule>
+
+  <rule id="100107" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40500</field>
+  </rule>
+
+  <rule id="100108" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40600</field>
+  </rule>
+
+  <rule id="100109" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40700</field>
+  </rule>
+
+  <rule id="100110" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40800</field>
+  </rule>
+
+  <rule id="100111" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40900</field>
+  </rule>
+
+  <rule id="100112" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40901</field>
+  </rule>
+
+  <rule id="100113" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40902</field>
+  </rule>
+</group>
+
+<!-- Veeam Licensing Event IDs-->
+
+<group name="Veeam Licensing">
+
+    <rule id="100114" level="2">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40903</field>
+  </rule>
+
+  <rule id="100115" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24010</field>
+  </rule>
+
+  <rule id="100116" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24020</field>
+  </rule>
+
+  <rule id="100117" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24022</field>
+  </rule>
+
+  <rule id="100118" level="5">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24030</field>
+  </rule>
+
+  <rule id="100119" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24040</field>
+  </rule>
+
+  <rule id="100120" level="5">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24050</field>
+  </rule>
+
+  <rule id="100121" level="5">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24060</field>
+  </rule>
+
+  <rule id="100122" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24070</field>
+  </rule>
+
+  <rule id="100123" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">24080</field>
+  </rule>
+
+  <rule id="100124" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41300</field>
+  </rule>
+
+  <rule id="100125" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41301</field>
+  </rule>
+
+  <rule id="100126" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41302</field>
+  </rule>
+
+  <rule id="100127" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41303</field>
+  </rule>
+
+  <rule id="100128" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41304</field>
+  </rule>
+
+  <rule id="100129" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41305</field>
+  </rule>
+</group>
+
+<!-- Veeam Security Event IDs-->
+
+<group name="Veeam Security">
+  <rule id="100130" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25300</field>
+  </rule>
+
+  <rule id="100131" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25400</field>
+  </rule>
+
+  <rule id="100132" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25500</field>
+  </rule>
+
+  <rule id="100133" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31210</field>
+  </rule>
+
+  <rule id="100134" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31600</field>
+  </rule>
+
+  <rule id="100135" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31700</field>
+  </rule>
+
+  <rule id="100136" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31800</field>
+  </rule>
+
+  <rule id="100137" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">31900</field>
+  </rule>
+
+  <rule id="100138" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40200</field>
+  </rule>
+
+  <rule id="100139" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40201</field>
+  </rule>
+
+  <rule id="100140" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40202</field>
+  </rule>
+
+  <rule id="100141" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40203</field>
+  </rule>
+
+  <rule id="100142" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40204</field>
+  </rule>
+
+  <rule id="100143" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40205</field>
+  </rule>
+
+  <rule id="100144" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40206</field>
+  </rule>
+
+  <rule id="100145" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40903</field>
+  </rule>
+
+  <rule id="100146" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41600</field>
+  </rule>
+
+  <rule id="100147" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41610</field>
+  </rule>
+
+  <rule id="100148" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42200</field>
+  </rule>
+
+  <rule id="100149" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42210</field>
+  </rule>
+
+  <rule id="100150" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42220</field>
+  </rule>
+
+  <rule id="100151" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42230</field>
+  </rule>
+
+  <rule id="100152" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42260</field>
+  </rule>
+
+  <rule id="100153" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42270</field>
+  </rule>
+
+  <rule id="100154" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42280</field>
+  </rule>
+
+  <rule id="100155" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42290</field>
+  </rule>
+
+  <rule id="100156" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42300</field>
+  </rule>
+
+  <rule id="100157" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42301</field>
+  </rule>
+
+  <rule id="100158" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42302</field>
+  </rule>
+
+  <rule id="100159" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42400</field>
+  </rule>
+
+ <rule id="100160" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42401</field>
+  </rule>
+
+  <rule id="100161" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42402</field>
+  </rule>
+
+  <rule id="100162" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42403</field>
+  </rule>
+
+  <rule id="100163" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42404</field>
+  </rule>
+
+  <rule id="100164" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42405</field>
+  </rule>
+
+  <rule id="100165" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">42500</field>
+  </rule>
+</group>
+
+<!-- Veeam Server and Hosts Event IDs-->
+
+<group name="Veeam Server and Hosts">
+  <rule id="100166" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25600</field>
+  </rule>
+
+  <rule id="100167" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25700</field>
+  </rule>
+
+  <rule id="100168" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25800</field>
+  </rule>
+
+  <rule id="100169" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28300</field>
+  </rule>
+
+  <rule id="100170" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28400</field>
+  </rule>
+
+  <rule id="100171" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28500</field>
+  </rule>
+
+  <rule id="100172" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">32900</field>
+  </rule>
+
+  <rule id="100173" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41400</field>
+  </rule>
+
+  <rule id="100174" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41401</field>
+  </rule>
+
+  <rule id="100175" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41402</field>
+  </rule>
+</group>
+
+<!-- Veeam Repository Event IDs-->
+
+<group name="Veeam Repository">
+  <rule id="100176" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21220</field>
+  </rule>
+
+  <rule id="100177" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21224</field>
+  </rule>
+
+  <rule id="100178" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">26500</field>
+  </rule>
+
+  <rule id="100179" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28000</field>
+  </rule>
+
+  <rule id="100180" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28100</field>
+  </rule>
+
+  <rule id="100181" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28200</field>
+  </rule>
+
+  <rule id="100182" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29700</field>
+  </rule>
+
+  <rule id="100183" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29800</field>
+  </rule>
+
+  <rule id="100184" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29900</field>
+  </rule>
+
+  <rule id="100185" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30000</field>
+  </rule>
+
+  <rule id="100186" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30100</field>
+  </rule>
+
+  <rule id="100187" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30200</field>
+  </rule>
+
+  <rule id="100188" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">32000</field>
+  </rule>
+
+  <rule id="100189" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">32100</field>
+  </rule>
+
+  <rule id="100190" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">32200</field>
+  </rule>
+
+  <rule id="100500" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40002</field>
+  </rule>
+</group>
+
+<!-- Veeam Proxy Event IDs-->
+
+<group name="veeam Proxy">
+  <rule id="100191" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21210</field>
+  </rule>
+
+  <rule id="100192" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21214</field>
+  </rule>
+
+  <rule id="100193" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27700</field>
+  </rule>
+
+  <rule id="100194" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27800</field>
+  </rule>
+
+  <rule id="100195" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27900</field>
+  </rule>
+</group>
+
+<!-- Veeam WAN Accelerator Event IDs-->
+
+<group name="Veeam WAN Accelerator">
+  <rule id="100196" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21230</field>
+  </rule>
+
+  <rule id="100197" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">21234</field>
+  </rule>
+
+  <rule id="100198" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27100</field>
+  </rule>
+
+  <rule id="100199" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27200</field>
+  </rule>
+
+  <rule id="100200" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">27300</field>
+  </rule>
+
+  <rule id="100201" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">33000</field>
+  </rule>
+
+  <rule id="100202" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">33001</field>
+  </rule>
+</group>
+
+<!-- Veeam Jobs Event IDs-->
+
+<group name="Veeam Jobs">
+  <rule id="100203" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">110</field>
+  </rule>
+
+  <rule id="100204" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">150</field>
+  </rule>
+
+  <rule id="100205" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">190</field>
+  </rule>
+
+  <rule id="100206" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">410</field>
+  </rule>
+
+  <rule id="100207" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">450</field>
+  </rule>
+
+  <rule id="100208" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">490</field>
+  </rule>
+
+  <rule id="100209" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">510</field>
+  </rule>
+
+  <rule id="100210" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">512</field>
+  </rule>
+
+  <rule id="100211" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">590</field>
+  </rule>
+
+  <rule id="100212" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">592</field>
+  </rule>
+
+  <rule id="100213" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">610</field>
+  </rule>
+
+  <rule id="100214" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">710</field>
+  </rule>
+
+  <rule id="100215" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">790</field>
+  </rule>
+
+  <rule id="100216" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">810</field>
+  </rule>
+
+  <rule id="100217" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">890</field>
+  </rule>
+
+  <rule id="100218" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10010</field>
+  </rule>
+
+  <rule id="100219" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10050</field>
+  </rule>
+
+  <rule id="100220" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10090</field>
+  </rule>
+
+  <rule id="100221" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23010</field>
+  </rule>
+
+  <rule id="100222" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23050</field>
+  </rule>
+
+  <rule id="100223" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23090</field>
+  </rule>
+
+  <rule id="100224" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23110</field>
+  </rule>
+
+  <rule id="100225" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23130</field>
+  </rule>
+
+  <rule id="100226" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23410</field>
+  </rule>
+
+  <rule id="100227" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23420</field>
+  </rule>
+
+  <rule id="100228" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">25900</field>
+  </rule>
+
+  <rule id="100229" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">26000</field>
+  </rule>
+
+  <rule id="100230" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">26100</field>
+  </rule>
+
+  <rule id="100231" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">26600</field>
+  </rule>
+
+  <rule id="100232" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">26700</field>
+  </rule>
+
+  <rule id="100233" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">32120</field>
+  </rule>
+
+  <rule id="100234" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40002</field>
+  </rule>
+
+  <rule id="100235" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41200</field>
+  </rule>
+
+  <rule id="100236" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41201</field>
+  </rule>
+
+  <rule id="100237" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41202</field>
+  </rule>
+
+  <rule id="100238" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41700</field>
+  </rule>
+
+  <rule id="100501" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41710</field>
+  </rule>
+</group>
+
+<!-- Veeam NAS Backup Event IDs-->
+
+<group name="Veeam Nas backup group">
+  <rule id="100239" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">151</field>
+  </rule>
+
+  <rule id="100240" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">451</field>
+  </rule>
+
+  <rule id="100241" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">600</field>
+  </rule>
+
+  <rule id="100242" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">601</field>
+  </rule>
+
+  <rule id="100243" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">610</field>
+  </rule>
+
+  <rule id="100244" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28900</field>
+  </rule>
+
+  <rule id="100245" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28910</field>
+  </rule>
+
+  <rule id="100246" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28920</field>
+  </rule>
+
+  <rule id="100247" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28930</field>
+  </rule>
+
+  <rule id="100248" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28940</field>
+  </rule>
+
+  <rule id="100249" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28950</field>
+  </rule>
+
+  <rule id="100250" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41000</field>
+  </rule>
+
+  <rule id="100251" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41001</field>
+  </rule>
+</group>
+
+<!-- Veeam Restore Event IDs-->
+
+<group name="Veeam Restore">
+  <rule id="100252" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">210</field>
+  </rule>
+
+  <rule id="100253" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">250</field>
+  </rule>
+
+  <rule id="100254" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">290</field>
+  </rule>
+
+  <rule id="100255" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">600</field>
+  </rule>
+
+  <rule id="100256" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">601</field>
+  </rule>
+
+  <rule id="100257" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40210</field>
+  </rule>
+
+  <rule id="100258" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">40290</field>
+  </rule>
+
+  <rule id="100259" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41500</field>
+  </rule>
+
+  <rule id="100260" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">41510</field>
+  </rule>
+</group>
+
+<!-- Veeam Sure Backup Event IDs-->
+
+<group name="Veeam Sure Backup">
+  <rule id="100261" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">310</field>
+  </rule>
+
+  <rule id="100262" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">350</field>
+  </rule>
+
+  <rule id="100263" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">351</field>
+  </rule>
+
+  <rule id="100264" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">390</field>
+  </rule>
+
+  <rule id="100265" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23210</field>
+  </rule>
+
+  <rule id="100266" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23220</field>
+  </rule>
+
+  <rule id="100267" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23230</field>
+  </rule>
+
+  <rule id="100268" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23310</field>
+  </rule>
+
+  <rule id="100269" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23320</field>
+  </rule>
+
+  <rule id="100270" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30300</field>
+  </rule>
+
+  <rule id="100271" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30400</field>
+  </rule>
+
+  <rule id="100272" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30500</field>
+  </rule>
+
+  <rule id="100273" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30600</field>
+  </rule>
+
+  <rule id="100274" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30700</field>
+  </rule>
+
+  <rule id="100275" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">30800</field>
+  </rule>
+</group>
+
+<!-- Veeam Tape Event IDs-->
+
+<group name="Veeam Tape">
+  <rule id="100276" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">114</field>
+  </rule>
+
+  <rule id="100277" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">115</field>
+  </rule>
+
+  <rule id="100278" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">116</field>
+  </rule>
+
+  <rule id="100279" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">117</field>
+  </rule>
+
+  <rule id="100280" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">118</field>
+  </rule>
+
+  <rule id="100281" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">119</field>
+  </rule>
+
+  <rule id="100282" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">120</field>
+  </rule>
+
+  <rule id="100283" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">121</field>
+  </rule>
+
+  <rule id="100284" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">122</field>
+  </rule>
+
+  <rule id="100285" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">123</field>
+  </rule>
+
+  <rule id="100286" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">124</field>
+  </rule>
+
+  <rule id="100287" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">125</field>
+  </rule>
+
+  <rule id="100288" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">126</field>
+  </rule>
+
+  <rule id="100289" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">194</field>
+  </rule>
+
+  <rule id="100290" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">195</field>
+  </rule>
+
+  <rule id="100291" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">196</field>
+  </rule>
+
+  <rule id="100292" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">197</field>
+  </rule>
+
+  <rule id="100293" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">198</field>
+  </rule>
+
+  <rule id="100294" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">199</field>
+  </rule>
+
+  <rule id="100295" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">200</field>
+  </rule>
+
+  <rule id="100296" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">203</field>
+  </rule>
+
+  <rule id="100297" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">204</field>
+  </rule>
+
+  <rule id="100298" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">205</field>
+  </rule>
+
+  <rule id="100299" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">206</field>
+  </rule>
+
+  <rule id="100300" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">207</field>
+  </rule>
+
+  <rule id="100301" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">208</field>
+  </rule>
+
+  <rule id="100302" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10014</field>
+  </rule>
+
+  <rule id="100303" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">20114</field>
+  </rule>
+
+  <rule id="100304" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23440</field>
+  </rule>
+
+  <rule id="100305" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23450</field>
+  </rule>
+
+  <rule id="100306" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23490</field>
+  </rule>
+
+  <rule id="100307" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23610</field>
+  </rule>
+
+  <rule id="100308" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23611</field>
+  </rule>
+
+  <rule id="100309" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23612</field>
+  </rule>
+
+  <rule id="100310" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23620</field>
+  </rule>
+
+  <rule id="100311" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23621</field>
+  </rule>
+
+  <rule id="100312" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23622</field>
+  </rule>
+
+  <rule id="100313" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23623</field>
+  </rule>
+
+  <rule id="100314" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28600</field>
+  </rule>
+
+  <rule id="100315" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28650</field>
+  </rule>
+
+  <rule id="100316" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28700</field>
+  </rule>
+
+  <rule id="100317" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28750</field>
+  </rule>
+
+  <rule id="100503" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">28800</field>
+  </rule>
+</group>
+
+<!-- Veeam Agents Event IDs-->
+
+<group name="Veeam Agents">
+  <rule id="100318" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10010</field>
+  </rule>
+
+  <rule id="100319" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">10050</field>
+  </rule>
+
+  <rule id="100320" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23010</field>
+  </rule>
+
+  <rule id="100321" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23050</field>
+  </rule>
+
+  <rule id="100322" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">23090</field>
+  </rule>
+
+  <rule id="100323" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29100</field>
+  </rule>
+
+  <rule id="100324" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29110</field>
+  </rule>
+
+  <rule id="100325" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29120</field>
+  </rule>
+
+  <rule id="100326" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29130</field>
+  </rule>
+
+  <rule id="100327" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29140</field>
+  </rule>
+
+  <rule id="100328" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">29150</field>
+  </rule>
+
+  <rule id="100329" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36011</field>
+  </rule>
+
+  <rule id="100330" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36012</field>
+  </rule>
+
+  <rule id="100331" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36013</field>
+  </rule>
+
+  <rule id="100332" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36014</field>
+  </rule>
+
+  <rule id="100333" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36021</field>
+  </rule>
+
+  <rule id="100334" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36022</field>
+  </rule>
+
+  <rule id="100335" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36023</field>
+  </rule>
+
+  <rule id="100336" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36024</field>
+  </rule>
+
+  <rule id="100337" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36025</field>
+  </rule>
+
+  <rule id="100338" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="EventID">36026</field>
+  </rule>
+</group>
+
+
