@@ -1,9 +1,9 @@
 <!-- Veeam -->
 <!-- syslog Log rules Veeam Logs -->
 <!-- Author - Ian Engelbrecht -->
+<!-- Enhanced for comprehensive Veeam Backup & Replication v12.1 monitoring -->
 
 <group name="Veeam_Backup_Replication_v12.1 Info">
-
   <rule id="100025" level="4">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
@@ -45,19 +45,19 @@
     <match>finished with Sucessfull</match>
   </rule>
 
-<rule id="100031" level="4">
+  <rule id="100031" level="4">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description) by $(User)</description>
     <field name="State">changed</field>
     <field name="Object">Backup server general options</field>
-</rule>
+  </rule>
 
-<rule id="100032" level="4">
+  <rule id="100032" level="4">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="workload">^Agent|^Vm</field>
     <field name="State">started|stopped|enabled|disabled|cancelled</field>
-</rule>
+  </rule>
 
   <rule id="100033" level="4">
     <decoded_as>Veeam MP</decoded_as>
@@ -76,11 +76,143 @@
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
   </rule>
 
+  <!-- Enhanced rules for new event types -->
+  <rule id="100035" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Backup job</field>
+    <field name="State">started|finished</field>
+  </rule>
+
+  <rule id="100036" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Tape job</field>
+    <field name="State">started|finished</field>
+  </rule>
+
+  <rule id="100037" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Restore point</field>
+    <field name="State">created|deleted|updated</field>
+  </rule>
+
+  <rule id="100038" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Connection</field>
+    <field name="State">restored|lost</field>
+  </rule>
+
+  <rule id="100039" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">License</field>
+    <field name="State">installed|expired|removed</field>
+  </rule>
+
+  <rule id="100040" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Tenant</field>
+    <field name="State">added|deleted|updated</field>
+  </rule>
+
+  <rule id="100041" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Cloud Gateway</field>
+    <field name="State">added|deleted|updated</field>
+  </rule>
+
+  <rule id="100042" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Failover Plan</field>
+    <field name="State">created|started|stopped|deleted</field>
+  </rule>
+
+  <rule id="100043" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Hardware Plan</field>
+    <field name="State">created|updated|deleted</field>
+  </rule>
+
+  <rule id="100044" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Service Provider</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100045" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Object Storage</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100046" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Protection Group</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100047" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Scale-Out Backup Repository</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100048" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Application Group</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100049" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Virtual Lab</field>
+    <field name="State">added|updated|deleted</field>
+  </rule>
+
+  <rule id="100050" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Recovery Token</field>
+    <field name="State">created|updated|deleted</field>
+  </rule>
+
+  <rule id="100051" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">External Infrastructure</field>
+    <field name="State">created|established|lost</field>
+  </rule>
+
+  <rule id="100052" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Health Check Job</field>
+    <field name="State">started|finished</field>
+  </rule>
+
+  <rule id="100053" level="4">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">KMS Key Rotation Job</field>
+    <field name="State">finished</field>
+  </rule>
 </group>
 
 <group name="Veeam_Backup_Replication_v12.1 Warning">
-
-  <rule id="100035" level="6">
+  <rule id="100054" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description) by $(User)</description>
     <match>Backup repository</match>
@@ -89,7 +221,7 @@
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
   </rule>
 
-  <rule id="100036" level="6">
+  <rule id="100055" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">Four-eyes</field>
@@ -97,42 +229,127 @@
     <mitre><id>T1562</id></mitre>
   </rule>
 
-  <rule id="100037" level="6">
+  <rule id="100056" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>Job $(JobName) finished with Warning</description>
     <match>finished with Warning|Warnings</match>
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
   </rule>
 
-  <rule id="100038" level="6">
+  <rule id="100057" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">^Malware detection event</field>
     <field name="State">resolved:</field>
   </rule>
 
-<rule id="100039" level="6">
+  <rule id="100058" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description) with change to $(property) </description>
     <field name="workload">^Agent|^Vm</field>
     <field name="property">Retention value</field>
     <mitre><id>T1490</id></mitre>
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
-</rule>
+  </rule>
 
-<rule id="100060" level="6">
+  <rule id="100059" level="6">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">Malware detection settings</field>
     <field name="State">changed.</field>
     <mitre><id>T1562</id></mitre>
-</rule>
+  </rule>
 
+  <!-- Enhanced warning rules for new event types -->
+  <rule id="100060" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">License</field>
+    <field name="State">expiring|limit exceeded</field>
+  </rule>
+
+  <rule id="100061" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Connection</field>
+    <field name="State">lost</field>
+  </rule>
+
+  <rule id="100062" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Multi-Factor Authentication</field>
+    <field name="State">disabled|token revoked</field>
+    <mitre><id>T1556</id></mitre>
+  </rule>
+
+  <rule id="100063" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Four-Eyes Authorization</field>
+    <field name="State">disabled|request rejected|request expired</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100064" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Encryption Password</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1486</id></mitre>
+  </rule>
+
+  <rule id="100065" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Job Settings</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100066" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Tape Media Pool</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100067" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Backup Repository</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100068" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Host Settings</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100069" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">WAN Accelerator</field>
+    <field name="State">updated|deleted</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100070" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Global Settings</field>
+    <field name="State">updated</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
 </group>
 
 <group name="Veeam_Backup_Replication_v12.1 Error">
-
-  <rule id="100040" level="8">
+  <rule id="100071" level="8">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">Restore point</field>
@@ -141,35 +358,96 @@
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
   </rule>
 
-  <rule id="100041" level="8">
+  <rule id="100072" level="8">
     <decoded_as>Veeam MP</decoded_as>
     <description>Job $(JobName) finished with Failed or Error</description>
     <match>finished with Failed</match>
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
   </rule>
 
-<rule id="100050" level="8">
+  <rule id="100073" level="8">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="workload">^Agent|^Vm</field>
     <field name="State">deleted</field>
     <mitre><id>T1490</id></mitre>
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
-</rule>
+  </rule>
 
-<rule id="100051" level="8">
+  <rule id="100074" level="8">
     <decoded_as>Veeam MP</decoded_as>
     <description>objects has been $(State) by $(User)</description>
     <match>objects has been deleted</match>
     <mitre><id>T1490</id></mitre>
     <group>syscheck,pci_dss_11.5,gpg13_4.11,gdpr_II_5.1.f,</group>
-</rule>
+  </rule>
 
+  <!-- Enhanced error rules for new event types -->
+  <rule id="100075" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">License</field>
+    <field name="State">expired|support expired</field>
+  </rule>
 
+  <rule id="100076" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Adding User or Group</field>
+    <field name="State">Failed</field>
+    <mitre><id>T1531</id></mitre>
+  </rule>
+
+  <rule id="100077" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Attempt to Delete Backup</field>
+    <field name="State">Failed</field>
+    <mitre><id>T1565</id></mitre>
+  </rule>
+
+  <rule id="100078" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Attempt To Update Security Object</field>
+    <field name="State">Failed</field>
+    <mitre><id>T1562</id></mitre>
+  </rule>
+
+  <rule id="100079" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Invalid Code for Multi-Factor Authentication</field>
+    <field name="State">Entered</field>
+    <mitre><id>T1586</id></mitre>
+  </rule>
+
+  <rule id="100080" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Allowed Attempts for Multi-Factor Authentication</field>
+    <field name="State">Exceeded</field>
+    <mitre><id>T1586</id></mitre>
+  </rule>
+
+  <rule id="100081" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Failover Plan</field>
+    <field name="State">Failed</field>
+  </rule>
+
+  <rule id="100082" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Malware Detection Session</field>
+    <field name="State">Failed</field>
+    <mitre><id>T1587.001</id></mitre>
+  </rule>
 </group>
 
 <group name="Veeam_Backup_Replication_v12.1 Potential IOC">
-  <rule id="100042" level="12">
+  <rule id="100083" level="12">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">^Malware detection event</field>
@@ -177,7 +455,7 @@
     <mitre><id>T1587.001</id></mitre>
   </rule>
 
-  <rule id="100043" level="12">
+  <rule id="100084" level="12">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Object">Malware detection session</field>
@@ -185,20 +463,82 @@
     <mitre><id>T1587.001</id></mitre>
   </rule>
 
-  <rule id="100044" level="12">
+  <rule id="100085" level="12">
     <decoded_as>Veeam MP</decoded_as>
     <description>$(Description)</description>
     <field name="Detected">Threats</field>
     <mitre><id>T1587.001</id></mitre>
   </rule>
 
-  <rule id="100045" level="12">
+  <rule id="100086" level="12">
     <decoded_as>Veeam MP</decoded_as>
     <description>Cannot find a clean restore point in the selected time range for Server $(Target) using $(Scan)</description>
     <match>Cannot find a clean restore point in the selected time range</match>
     <mitre><id>T1587.001</id></mitre>
   </rule>
 
+  <!-- Enhanced IOC rules for new event types -->
+  <rule id="100087" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Malware Activity</field>
+    <field name="State">Detected</field>
+    <mitre><id>T1204</id></mitre>
+  </rule>
+
+  <rule id="100088" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Restore Point</field>
+    <field name="State">Marked as Infected</field>
+    <mitre><id>T1204</id></mitre>
+  </rule>
+
+  <rule id="100089" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Objects Added to Malware Detection Exclusions</field>
+    <field name="State">added</field>
+    <mitre><id>T1562</id></mitre>
+  </rule>
+
+  <rule id="100090" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Malware Detection Exclusions List</field>
+    <field name="State">Updated</field>
+    <mitre><id>T1562</id></mitre>
+  </rule>
+
+  <rule id="100091" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Malware Detection Settings</field>
+    <field name="State">Updated</field>
+    <mitre><id>T1562</id></mitre>
+  </rule>
+
+  <rule id="100092" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Global VM Exclusions</field>
+    <field name="State">Added|Changed</field>
+    <mitre><id>T1562</id></mitre>
+  </rule>
+
+  <rule id="100093" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Data Synchronization</field>
+    <field name="State">Interrupted</field>
+    <mitre><id>T1498</id></mitre>
+  </rule>
+
+  <rule id="100094" level="12">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>$(Description)</description>
+    <field name="Object">Connection</field>
+    <field name="State">Lost</field>
+    <mitre><id>T1498</id></mitre>
+  </rule>
 </group>
-
-

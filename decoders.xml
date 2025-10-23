@@ -1,11 +1,81 @@
 <!-- Veeam -->
 <!-- syslog Log Decoders Veeam Logs -->
 <!-- Author - Ian Engelbrecht -->
+<!-- Updated for RFC 5424 syslog format with structured data -->
 
 <decoder name="Veeam MP">
-    <prematch type="pcre2">Veeam_MP - - \[origin enterpriseId="([^"]+)"\] \[categoryId=([^\s]+) instanceId=([^\s]+)</prematch>
+    <prematch type="pcre2">Veeam_MP - - \[categoryId=([^\s]+) instanceId=([^\s]+)</prematch>
+    <order>categoryId, instanceId</order>
 </decoder>
 
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">JobSessionID="([^"]+)"</regex>
+    <order>JobSessionID</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">JobID="([^"]+)"</regex>
+    <order>JobID</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">JobType="([^"]+)"</regex>
+    <order>JobType</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Platform="([^"]+)"</regex>
+    <order>Platform</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Flags="([^"]+)"</regex>
+    <order>Flags</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Version="([^"]+)"</regex>
+    <order>Version</order>
+</decoder>
+
+<!-- Enhanced decoders for structured data fields -->
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">VmName="([^"]+)"</regex>
+    <order>VmName</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">UserName="([^"]+)"</regex>
+    <order>UserName</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">Description="([^"]+)"</regex>
+    <order>Description</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">fullName="([^"]+)"</regex>
+    <order>fullName</order>
+</decoder>
+
+<decoder name="Veeam MP Enhanced">
+    <parent>Veeam MP</parent>
+    <regex type="pcre2">property name="([^"]+)"</regex>
+    <order>property</order>
+</decoder>
+
+<!-- Legacy decoders for backward compatibility -->
 <decoder name="General">
     <parent>Veeam MP</parent>
     <regex type="pcre2">by user (.*?)</regex>
