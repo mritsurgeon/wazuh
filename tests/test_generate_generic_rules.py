@@ -62,8 +62,8 @@ def test_build_rule_xml_contains_event_id_and_description():
     rule = root.find("rule")
     assert rule.get("id") == "131000"
     assert rule.get("level") == "3"
-    assert rule.find("field[@name='EventID']").text == "31000"
-    assert rule.find("decoded_as").text == "Veeam MP"
+    assert rule.find("field[@name='EventID']").text == "^31000$"
+    assert rule.find("decoded_as").text == "Veeam MP 13.1"
 
 
 def test_build_rule_xml_uses_worst_case_level_for_multi_severity():
@@ -77,6 +77,22 @@ def test_build_rule_xml_uses_worst_case_level_for_multi_severity():
     root = etree.fromstring(f"<group name='test'>{xml}</group>")
     rule = root.find("rule")
     assert rule.get("level") == "8"
+    assert rule.find("field[@name='EventID']").text == "^31500$"
+
+
+def test_build_rule_xml_anchors_event_id_to_avoid_substring_match():
+    # Regression test: an unanchored EventID field would let "200" match
+    # inside "42200". The field text must be exactly ^{event_id}$.
+    event = {
+        "event_id": "200", "category": "General",
+        "message_summary": "Something happened",
+        "message_details": "details",
+        "severity": "Info", "mitre_tactic": "", "mitre_technique": "", "nist_800_53r5": "",
+    }
+    xml = build_rule_xml(event, rule_id=131002)
+    root = etree.fromstring(f"<group name='test'>{xml}</group>")
+    rule = root.find("rule")
+    assert rule.find("field[@name='EventID']").text == "^200$"
 
 
 def test_generate_rules_file_produces_well_formed_xml_with_unique_sequential_ids(tmp_path):

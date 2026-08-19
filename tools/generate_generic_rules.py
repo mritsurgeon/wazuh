@@ -3,8 +3,10 @@
 Consumes rows shaped like tools/scrape_veeam_events.py's parse_events_table
 output (dicts with event_id, category, message_summary, severity, ...) and
 produces a Wazuh rule XML file with one <rule> per event, matching the
-<decoded_as>Veeam MP</decoded_as> / <field name="EventID"> convention used by
-the decoder that pairs with these rules.
+<decoded_as>Veeam MP 13.1</decoded_as> / <field name="EventID"> convention
+used by the decoder that pairs with these rules. The EventID field is
+anchored (^{event_id}$) so it never substring-matches a longer numeric
+EventID (e.g. "200" must not match "42200").
 """
 
 import csv
@@ -52,9 +54,9 @@ def build_rule_xml(event: dict, rule_id: int) -> str:
     summary = escape(event["message_summary"] or event["event_id"])
     return (
         f'  <rule id="{rule_id}" level="{level}">\n'
-        f'    <decoded_as>Veeam MP</decoded_as>\n'
+        f'    <decoded_as>Veeam MP 13.1</decoded_as>\n'
         f'    <description>{summary}: $(Description)</description>\n'
-        f'    <field name="EventID">{event["event_id"]}</field>\n'
+        f'    <field name="EventID">^{event["event_id"]}$</field>\n'
         f'  </rule>\n'
     )
 

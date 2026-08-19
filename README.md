@@ -73,8 +73,12 @@ on the same Wazuh manager simultaneously if needed during a migration.
 
 You will find 2 rule files per version:
 
-- `Field_Veeam_Rules[_13.1].xml`: Custom rule examples with MITRE IDs, for security-relevant events.
-- `Generic_Veeam_rules[_13.1].xml`: Full Veeam Event ID list, one rule per event ID.
+- Custom rule examples with MITRE IDs, for security-relevant events:
+  `v12.1/Field_Veeam_Rules.xml` (v12.1) / `v13.1/Veeam_Field_Rules_13.1.xml` (v13.1 — word
+  order swapped, not just suffixed, so the filename sorts alphabetically after
+  `Generic_Veeam_rules_13.1.xml` in Wazuh's rule-loading directory).
+- Full Veeam Event ID list, one rule per event ID: `v12.1/Generic_Veeam_rules.xml` (v12.1) /
+  `v13.1/Generic_Veeam_rules_13.1.xml` (v13.1).
 
 ## Conclusion:
 
