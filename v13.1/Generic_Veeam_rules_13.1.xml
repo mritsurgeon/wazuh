@@ -1,0 +1,1659 @@
+<!-- Veeam Backup & Replication 13.1 -->
+<!-- Generated from v13.1/veeam_events_13.1.csv by tools/generate_generic_rules.py -->
+<group name="Veeam_Backup_Replication_13.1">
+  <rule id="131000" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Job Started: $(Description)</description>
+    <field name="EventID">110</field>
+  </rule>
+  <rule id="131001" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File to Tape Job Started: $(Description)</description>
+    <field name="EventID">114</field>
+  </rule>
+  <rule id="131002" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Erase Job Started: $(Description)</description>
+    <field name="EventID">115</field>
+  </rule>
+  <rule id="131003" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Inventorying Job Started: $(Description)</description>
+    <field name="EventID">116</field>
+  </rule>
+  <rule id="131004" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Cataloging Job Started: $(Description)</description>
+    <field name="EventID">117</field>
+  </rule>
+  <rule id="131005" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Verification Job Started: $(Description)</description>
+    <field name="EventID">118</field>
+  </rule>
+  <rule id="131006" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Export Job Started: $(Description)</description>
+    <field name="EventID">119</field>
+  </rule>
+  <rule id="131007" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Copy Job Started: $(Description)</description>
+    <field name="EventID">120</field>
+  </rule>
+  <rule id="131008" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Eject Job Started: $(Description)</description>
+    <field name="EventID">121</field>
+  </rule>
+  <rule id="131009" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Mark Tape As Free Job Started: $(Description)</description>
+    <field name="EventID">122</field>
+  </rule>
+  <rule id="131010" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Move To Media Pool Job Started: $(Description)</description>
+    <field name="EventID">123</field>
+  </rule>
+  <rule id="131011" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Delete From Library Job Started: $(Description)</description>
+    <field name="EventID">124</field>
+  </rule>
+  <rule id="131012" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Library Discovery Job Started: $(Description)</description>
+    <field name="EventID">125</field>
+  </rule>
+  <rule id="131013" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Import Job Started: $(Description)</description>
+    <field name="EventID">126</field>
+  </rule>
+  <rule id="131014" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Task Finished: $(Description)</description>
+    <field name="EventID">150</field>
+  </rule>
+  <rule id="131015" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Backup Job Finished: $(Description)</description>
+    <field name="EventID">151</field>
+  </rule>
+  <rule id="131016" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Job Finished: $(Description)</description>
+    <field name="EventID">190</field>
+  </rule>
+  <rule id="131017" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File to Tape Job Finished: $(Description)</description>
+    <field name="EventID">194</field>
+  </rule>
+  <rule id="131018" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Erase Job Finished: $(Description)</description>
+    <field name="EventID">195</field>
+  </rule>
+  <rule id="131019" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Inventorying Job Finished: $(Description)</description>
+    <field name="EventID">196</field>
+  </rule>
+  <rule id="131020" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Cataloging Job Finished: $(Description)</description>
+    <field name="EventID">197</field>
+  </rule>
+  <rule id="131021" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Verification Job Finished: $(Description)</description>
+    <field name="EventID">198</field>
+  </rule>
+  <rule id="131022" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Export Job Finished: $(Description)</description>
+    <field name="EventID">199</field>
+  </rule>
+  <rule id="131023" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Copy Job Finished: $(Description)</description>
+    <field name="EventID">200</field>
+  </rule>
+  <rule id="131024" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Eject Job Finished: $(Description)</description>
+    <field name="EventID">203</field>
+  </rule>
+  <rule id="131025" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Mark Tape As Free Job Finished: $(Description)</description>
+    <field name="EventID">204</field>
+  </rule>
+  <rule id="131026" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Move To Media Pool Job Finished: $(Description)</description>
+    <field name="EventID">205</field>
+  </rule>
+  <rule id="131027" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Delete From Library Job Finished: $(Description)</description>
+    <field name="EventID">206</field>
+  </rule>
+  <rule id="131028" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Library Discovery Job Finished: $(Description)</description>
+    <field name="EventID">207</field>
+  </rule>
+  <rule id="131029" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Import Job Finished: $(Description)</description>
+    <field name="EventID">208</field>
+  </rule>
+  <rule id="131030" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Session Started: $(Description)</description>
+    <field name="EventID">210</field>
+  </rule>
+  <rule id="131031" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Task for VMware VM Finished: $(Description)</description>
+    <field name="EventID">250</field>
+  </rule>
+  <rule id="131032" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Task for Hyper-V VM FInished: $(Description)</description>
+    <field name="EventID">251</field>
+  </rule>
+  <rule id="131033" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Session Finished: $(Description)</description>
+    <field name="EventID">290</field>
+  </rule>
+  <rule id="131034" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>SureBackup Job Started: $(Description)</description>
+    <field name="EventID">310</field>
+  </rule>
+  <rule id="131035" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Verification Task for VMware VM Finished: $(Description)</description>
+    <field name="EventID">350</field>
+  </rule>
+  <rule id="131036" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Validation Task for VMware VM Finished: $(Description)</description>
+    <field name="EventID">351</field>
+  </rule>
+  <rule id="131037" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Verification Task for Hyper-V VM Finished: $(Description)</description>
+    <field name="EventID">360</field>
+  </rule>
+  <rule id="131038" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Validation Task for Hyper-V VM Finished: $(Description)</description>
+    <field name="EventID">361</field>
+  </rule>
+  <rule id="131039" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>SureBackup Job Finished: $(Description)</description>
+    <field name="EventID">390</field>
+  </rule>
+  <rule id="131040" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Copy Job Started: $(Description)</description>
+    <field name="EventID">410</field>
+  </rule>
+  <rule id="131041" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Copy Task Finished: $(Description)</description>
+    <field name="EventID">450</field>
+  </rule>
+  <rule id="131042" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Backup Copy Job Finished: $(Description)</description>
+    <field name="EventID">451</field>
+  </rule>
+  <rule id="131043" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Copy Job Finished: $(Description)</description>
+    <field name="EventID">490</field>
+  </rule>
+  <rule id="131044" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Copy Job Started: $(Description)</description>
+    <field name="EventID">510</field>
+  </rule>
+  <rule id="131045" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>VM Copy Job Started: $(Description)</description>
+    <field name="EventID">512</field>
+  </rule>
+  <rule id="131046" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Copy Job Finished: $(Description)</description>
+    <field name="EventID">590</field>
+  </rule>
+  <rule id="131047" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>VM Copy Job Finished: $(Description)</description>
+    <field name="EventID">592</field>
+  </rule>
+  <rule id="131048" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Quick Migration Started: $(Description)</description>
+    <field name="EventID">600</field>
+  </rule>
+  <rule id="131049" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Migrating File Share to Production Job Started: $(Description)</description>
+    <field name="EventID">601</field>
+  </rule>
+  <rule id="131050" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Quick Migration Finished: $(Description)</description>
+    <field name="EventID">610</field>
+  </rule>
+  <rule id="131051" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Active Full Backup for Backup Policy Started: $(Description)</description>
+    <field name="EventID">650</field>
+  </rule>
+  <rule id="131052" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Active Full Backup for Backup Policy Finished: $(Description)</description>
+    <field name="EventID">652</field>
+  </rule>
+  <rule id="131053" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Agent Backup Job Started: $(Description)</description>
+    <field name="EventID">710</field>
+  </rule>
+  <rule id="131054" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Agent Backup Job Finished: $(Description)</description>
+    <field name="EventID">790</field>
+  </rule>
+  <rule id="131055" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Rescan Job Started: $(Description)</description>
+    <field name="EventID">810</field>
+  </rule>
+  <rule id="131056" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Rescan Job Finished: $(Description)</description>
+    <field name="EventID">890</field>
+  </rule>
+  <rule id="131057" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Created: $(Description)</description>
+    <field name="EventID">10010</field>
+  </rule>
+  <rule id="131058" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Offloaded to Tape: $(Description)</description>
+    <field name="EventID">10014</field>
+  </rule>
+  <rule id="131059" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Deleted: $(Description)</description>
+    <field name="EventID">10050</field>
+  </rule>
+  <rule id="131060" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Updated: $(Description)</description>
+    <field name="EventID">10090</field>
+  </rule>
+  <rule id="131061" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Host Added: $(Description)</description>
+    <field name="EventID">20114</field>
+  </rule>
+  <rule id="131062" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Host Settings Updated: $(Description)</description>
+    <field name="EventID">21210</field>
+  </rule>
+  <rule id="131063" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>NDMP Server Added: $(Description)</description>
+    <field name="EventID">21214</field>
+  </rule>
+  <rule id="131064" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Platform Service Established: $(Description)</description>
+    <field name="EventID">21220</field>
+  </rule>
+  <rule id="131065" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Platform Service Lost: $(Description)</description>
+    <field name="EventID">21224</field>
+  </rule>
+  <rule id="131066" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection from Platform Service to Managed Proxy Established: $(Description)</description>
+    <field name="EventID">21230</field>
+  </rule>
+  <rule id="131067" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection from Platform Service to Managed Proxy Lost: $(Description)</description>
+    <field name="EventID">21234</field>
+  </rule>
+  <rule id="131068" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Data Synchronization Interrupted: $(Description)</description>
+    <field name="EventID">23010</field>
+  </rule>
+  <rule id="131069" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Configuration Database Connected: $(Description)</description>
+    <field name="EventID">23050</field>
+  </rule>
+  <rule id="131070" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Deleted: $(Description)</description>
+    <field name="EventID">23090</field>
+  </rule>
+  <rule id="131071" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Automatically Marked as Clean: $(Description)</description>
+    <field name="EventID">23110</field>
+  </rule>
+  <rule id="131072" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Health Check Job Started: $(Description)</description>
+    <field name="EventID">23130</field>
+  </rule>
+  <rule id="131073" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Detection Exclusions List Updated: $(Description)</description>
+    <field name="EventID">23210</field>
+  </rule>
+  <rule id="131074" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>KMS Server Deleted: $(Description)</description>
+    <field name="EventID">23220</field>
+  </rule>
+  <rule id="131075" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Session Started: $(Description)</description>
+    <field name="EventID">23230</field>
+  </rule>
+  <rule id="131076" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Session Finished: $(Description)</description>
+    <field name="EventID">23310</field>
+  </rule>
+  <rule id="131077" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Results Downloaded: $(Description)</description>
+    <field name="EventID">23320</field>
+  </rule>
+  <rule id="131078" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Job Assigned as Secondary Destination: $(Description)</description>
+    <field name="EventID">23410</field>
+  </rule>
+  <rule id="131079" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Job No Longer Used as Secondary Destination: $(Description)</description>
+    <field name="EventID">23420</field>
+  </rule>
+  <rule id="131080" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Job Created: $(Description)</description>
+    <field name="EventID">23440</field>
+  </rule>
+  <rule id="131081" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Job Settings Updated: $(Description)</description>
+    <field name="EventID">23450</field>
+  </rule>
+  <rule id="131082" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Job Deleted: $(Description)</description>
+    <field name="EventID">23490</field>
+  </rule>
+  <rule id="131083" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Pool Created: $(Description)</description>
+    <field name="EventID">23610</field>
+  </rule>
+  <rule id="131084" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Vault Created: $(Description)</description>
+    <field name="EventID">23611</field>
+  </rule>
+  <rule id="131085" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Pool Updated: $(Description)</description>
+    <field name="EventID">23620</field>
+  </rule>
+  <rule id="131086" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Vault Updated: $(Description)</description>
+    <field name="EventID">23621</field>
+  </rule>
+  <rule id="131087" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Medium Updated: $(Description)</description>
+    <field name="EventID">23622</field>
+  </rule>
+  <rule id="131088" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Library Settings Updated: $(Description)</description>
+    <field name="EventID">23623</field>
+  </rule>
+  <rule id="131089" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Pool Deleted: $(Description)</description>
+    <field name="EventID">23630</field>
+  </rule>
+  <rule id="131090" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Media Vault Deleted: $(Description)</description>
+    <field name="EventID">23631</field>
+  </rule>
+  <rule id="131091" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Medium Deleted: $(Description)</description>
+    <field name="EventID">23632</field>
+  </rule>
+  <rule id="131092" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Library Deleted: $(Description)</description>
+    <field name="EventID">23633</field>
+  </rule>
+  <rule id="131093" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Installed: $(Description)</description>
+    <field name="EventID">24010</field>
+  </rule>
+  <rule id="131094" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Expiring: $(Description)</description>
+    <field name="EventID">24020</field>
+  </rule>
+  <rule id="131095" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Expired: $(Description)</description>
+    <field name="EventID">24030</field>
+  </rule>
+  <rule id="131096" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Support Expiring: $(Description)</description>
+    <field name="EventID">24040</field>
+  </rule>
+  <rule id="131097" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Support Expired: $(Description)</description>
+    <field name="EventID">24050</field>
+  </rule>
+  <rule id="131098" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Grace Period Started: $(Description)</description>
+    <field name="EventID">24060</field>
+  </rule>
+  <rule id="131099" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Limit Exceeded: $(Description)</description>
+    <field name="EventID">24070</field>
+  </rule>
+  <rule id="131100" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Removed: $(Description)</description>
+    <field name="EventID">24080</field>
+  </rule>
+  <rule id="131101" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Added: $(Description)</description>
+    <field name="EventID">24110</field>
+  </rule>
+  <rule id="131102" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Password Changed: $(Description)</description>
+    <field name="EventID">24114</field>
+  </rule>
+  <rule id="131103" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Deleted: $(Description)</description>
+    <field name="EventID">24120</field>
+  </rule>
+  <rule id="131104" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Added: $(Description)</description>
+    <field name="EventID">24130</field>
+  </rule>
+  <rule id="131105" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Settings Updated: $(Description)</description>
+    <field name="EventID">24131</field>
+  </rule>
+  <rule id="131106" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Deleted: $(Description)</description>
+    <field name="EventID">24140</field>
+  </rule>
+  <rule id="131107" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Pool Added: $(Description)</description>
+    <field name="EventID">24141</field>
+  </rule>
+  <rule id="131108" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Pool Settings Updated: $(Description)</description>
+    <field name="EventID">24142</field>
+  </rule>
+  <rule id="131109" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Gateway Pool Deleted: $(Description)</description>
+    <field name="EventID">24143</field>
+  </rule>
+  <rule id="131110" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Quota Added: $(Description)</description>
+    <field name="EventID">24150</field>
+  </rule>
+  <rule id="131111" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Quota Changed: $(Description)</description>
+    <field name="EventID">24160</field>
+  </rule>
+  <rule id="131112" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Quota Deleted: $(Description)</description>
+    <field name="EventID">24170</field>
+  </rule>
+  <rule id="131113" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Connect Certificate Updated: $(Description)</description>
+    <field name="EventID">24180</field>
+  </rule>
+  <rule id="131114" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant State Changed: $(Description)</description>
+    <field name="EventID">25000</field>
+  </rule>
+  <rule id="131115" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Updated: $(Description)</description>
+    <field name="EventID">25100</field>
+  </rule>
+  <rule id="131116" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Subtenant Added: $(Description)</description>
+    <field name="EventID">25200</field>
+  </rule>
+  <rule id="131117" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Subtenant Deleted: $(Description)</description>
+    <field name="EventID">25210</field>
+  </rule>
+  <rule id="131118" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Subtenant Updated: $(Description)</description>
+    <field name="EventID">25220</field>
+  </rule>
+  <rule id="131119" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Subtenant State Changed: $(Description)</description>
+    <field name="EventID">25230</field>
+  </rule>
+  <rule id="131120" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Credential Record Added: $(Description)</description>
+    <field name="EventID">25300</field>
+  </rule>
+  <rule id="131121" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Credential Record Updated: $(Description)</description>
+    <field name="EventID">25400</field>
+  </rule>
+  <rule id="131122" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Credential Record Deleted: $(Description)</description>
+    <field name="EventID">25500</field>
+  </rule>
+  <rule id="131123" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hypervisor Host Added: $(Description)</description>
+    <field name="EventID">25600</field>
+  </rule>
+  <rule id="131124" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hypervisor Host Deleted: $(Description)</description>
+    <field name="EventID">25700</field>
+  </rule>
+  <rule id="131125" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hypervisor Host Settings Updated: $(Description)</description>
+    <field name="EventID">25800</field>
+  </rule>
+  <rule id="131126" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Created: $(Description)</description>
+    <field name="EventID">25900</field>
+  </rule>
+  <rule id="131127" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Settings Updated: $(Description)</description>
+    <field name="EventID">26000</field>
+  </rule>
+  <rule id="131128" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Target Location Does Not Match Source Location: $(Description)</description>
+    <field name="EventID">26010</field>
+  </rule>
+  <rule id="131129" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Deleted: $(Description)</description>
+    <field name="EventID">26100</field>
+  </rule>
+  <rule id="131130" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Failed: $(Description)</description>
+    <field name="EventID">26110</field>
+  </rule>
+  <rule id="131131" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hardware Plan Created: $(Description)</description>
+    <field name="EventID">26200</field>
+  </rule>
+  <rule id="131132" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hardware Plan Settings Updated: $(Description)</description>
+    <field name="EventID">26300</field>
+  </rule>
+  <rule id="131133" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Hardware Plan Deleted: $(Description)</description>
+    <field name="EventID">26400</field>
+  </rule>
+  <rule id="131134" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Extent State for Scale-Out Backup Repository Changed: $(Description)</description>
+    <field name="EventID">26500</field>
+  </rule>
+  <rule id="131135" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Cloud Connect State Changed: $(Description)</description>
+    <field name="EventID">26510</field>
+  </rule>
+  <rule id="131136" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Started: $(Description)</description>
+    <field name="EventID">26600</field>
+  </rule>
+  <rule id="131137" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Failover Plan Stopped: $(Description)</description>
+    <field name="EventID">26700</field>
+  </rule>
+  <rule id="131138" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Replica Started: $(Description)</description>
+    <field name="EventID">26800</field>
+  </rule>
+  <rule id="131139" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Replica Stopped: $(Description)</description>
+    <field name="EventID">26900</field>
+  </rule>
+  <rule id="131140" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tenant Replica Permanent Failover Started: $(Description)</description>
+    <field name="EventID">27000</field>
+  </rule>
+  <rule id="131141" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Wan Accelerator Added: $(Description)</description>
+    <field name="EventID">27100</field>
+  </rule>
+  <rule id="131142" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Wan Accelerator Settings Updated: $(Description)</description>
+    <field name="EventID">27200</field>
+  </rule>
+  <rule id="131143" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Wan Accelerator Deleted: $(Description)</description>
+    <field name="EventID">27300</field>
+  </rule>
+  <rule id="131144" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Service Provider Added: $(Description)</description>
+    <field name="EventID">27400</field>
+  </rule>
+  <rule id="131145" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Service Provider Updated: $(Description)</description>
+    <field name="EventID">27500</field>
+  </rule>
+  <rule id="131146" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Service Provider Deleted: $(Description)</description>
+    <field name="EventID">27600</field>
+  </rule>
+  <rule id="131147" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Proxy Added: $(Description)</description>
+    <field name="EventID">27700</field>
+  </rule>
+  <rule id="131148" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Proxy Settings Updated: $(Description)</description>
+    <field name="EventID">27800</field>
+  </rule>
+  <rule id="131149" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Proxy Deleted: $(Description)</description>
+    <field name="EventID">27900</field>
+  </rule>
+  <rule id="131150" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Repository Added: $(Description)</description>
+    <field name="EventID">28000</field>
+  </rule>
+  <rule id="131151" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Repository Settings Updated: $(Description)</description>
+    <field name="EventID">28100</field>
+  </rule>
+  <rule id="131152" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Repository Deleted: $(Description)</description>
+    <field name="EventID">28200</field>
+  </rule>
+  <rule id="131153" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Host Added: $(Description)</description>
+    <field name="EventID">28300</field>
+  </rule>
+  <rule id="131154" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Host Settings Updated: $(Description)</description>
+    <field name="EventID">28400</field>
+  </rule>
+  <rule id="131155" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Host Deleted: $(Description)</description>
+    <field name="EventID">28500</field>
+  </rule>
+  <rule id="131156" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Server Added: $(Description)</description>
+    <field name="EventID">28600</field>
+  </rule>
+  <rule id="131157" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>NDMP Server Added: $(Description)</description>
+    <field name="EventID">28650</field>
+  </rule>
+  <rule id="131158" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Server Settings Updated: $(Description)</description>
+    <field name="EventID">28700</field>
+  </rule>
+  <rule id="131159" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>NDMP Server Settings Updated: $(Description)</description>
+    <field name="EventID">28750</field>
+  </rule>
+  <rule id="131160" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Tape Server Deleted: $(Description)</description>
+    <field name="EventID">28800</field>
+  </rule>
+  <rule id="131161" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>NDMP Server Deleted: $(Description)</description>
+    <field name="EventID">28850</field>
+  </rule>
+  <rule id="131162" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Share Added: $(Description)</description>
+    <field name="EventID">28900</field>
+  </rule>
+  <rule id="131163" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Share Settings Updated: $(Description)</description>
+    <field name="EventID">28910</field>
+  </rule>
+  <rule id="131164" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Share Deleted: $(Description)</description>
+    <field name="EventID">28920</field>
+  </rule>
+  <rule id="131165" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Server Added: $(Description)</description>
+    <field name="EventID">28930</field>
+  </rule>
+  <rule id="131166" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Server Settings Updated: $(Description)</description>
+    <field name="EventID">28940</field>
+  </rule>
+  <rule id="131167" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>File Server Deleted: $(Description)</description>
+    <field name="EventID">28950</field>
+  </rule>
+  <rule id="131168" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Storage Added: $(Description)</description>
+    <field name="EventID">28960</field>
+  </rule>
+  <rule id="131169" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Storage Settings Updated: $(Description)</description>
+    <field name="EventID">28970</field>
+  </rule>
+  <rule id="131170" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Storage Deleted: $(Description)</description>
+    <field name="EventID">28980</field>
+  </rule>
+  <rule id="131171" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Protection Group Added: $(Description)</description>
+    <field name="EventID">29100</field>
+  </rule>
+  <rule id="131172" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Protection Group Settings Updated: $(Description)</description>
+    <field name="EventID">29110</field>
+  </rule>
+  <rule id="131173" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Protection Group Deleted: $(Description)</description>
+    <field name="EventID">29120</field>
+  </rule>
+  <rule id="131174" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects for Protection Group Added: $(Description)</description>
+    <field name="EventID">29130</field>
+  </rule>
+  <rule id="131175" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects for Protection Group Changed: $(Description)</description>
+    <field name="EventID">29140</field>
+  </rule>
+  <rule id="131176" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects for Protection Group Deleted: $(Description)</description>
+    <field name="EventID">29150</field>
+  </rule>
+  <rule id="131177" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Archive Object Storage Added: $(Description)</description>
+    <field name="EventID">29700</field>
+  </rule>
+  <rule id="131178" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Archive Object Storage Settings Updated: $(Description)</description>
+    <field name="EventID">29800</field>
+  </rule>
+  <rule id="131179" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Archive Object Storage Deleted: $(Description)</description>
+    <field name="EventID">29900</field>
+  </rule>
+  <rule id="131180" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Scale-Out Backup Repository Added: $(Description)</description>
+    <field name="EventID">30000</field>
+  </rule>
+  <rule id="131181" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Scale-Out Backup Repository Settings Updated: $(Description)</description>
+    <field name="EventID">30100</field>
+  </rule>
+  <rule id="131182" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Scale-Out Backup Repository Deleted: $(Description)</description>
+    <field name="EventID">30200</field>
+  </rule>
+  <rule id="131183" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Application Group Added: $(Description)</description>
+    <field name="EventID">30300</field>
+  </rule>
+  <rule id="131184" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Application Group Settings Updated: $(Description)</description>
+    <field name="EventID">30400</field>
+  </rule>
+  <rule id="131185" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Application Group Deleted: $(Description)</description>
+    <field name="EventID">30500</field>
+  </rule>
+  <rule id="131186" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Virtual Lab Added: $(Description)</description>
+    <field name="EventID">30600</field>
+  </rule>
+  <rule id="131187" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Virtual Lab Settings Updated: $(Description)</description>
+    <field name="EventID">30700</field>
+  </rule>
+  <rule id="131188" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Virtual Lab Deleted: $(Description)</description>
+    <field name="EventID">30800</field>
+  </rule>
+  <rule id="131189" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>General Settings Updated: $(Description)</description>
+    <field name="EventID">31000</field>
+  </rule>
+  <rule id="131190" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global Settings for Network Traffic Rules Updated: $(Description)</description>
+    <field name="EventID">31100</field>
+  </rule>
+  <rule id="131191" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>User or Group Added: $(Description)</description>
+    <field name="EventID">31200</field>
+  </rule>
+  <rule id="131192" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Adding User or Group Failed: $(Description)</description>
+    <field name="EventID">31210</field>
+  </rule>
+  <rule id="131193" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Custom Role Added: $(Description)</description>
+    <field name="EventID">31300</field>
+  </rule>
+  <rule id="131194" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Custom Role Updated: $(Description)</description>
+    <field name="EventID">31310</field>
+  </rule>
+  <rule id="131195" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Custom Role Deleted: $(Description)</description>
+    <field name="EventID">31320</field>
+  </rule>
+  <rule id="131196" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>User or Group Deleted: $(Description)</description>
+    <field name="EventID">31400</field>
+  </rule>
+  <rule id="131197" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Configuration Backup Job Settings Updated: $(Description)</description>
+    <field name="EventID">31500</field>
+  </rule>
+  <rule id="131198" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Encryption Password Added: $(Description)</description>
+    <field name="EventID">31600</field>
+  </rule>
+  <rule id="131199" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Encryption Password Updated: $(Description)</description>
+    <field name="EventID">31700</field>
+  </rule>
+  <rule id="131200" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Encryption Password Deleted: $(Description)</description>
+    <field name="EventID">31800</field>
+  </rule>
+  <rule id="131201" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Encryption Password Verified: $(Description)</description>
+    <field name="EventID">31850</field>
+  </rule>
+  <rule id="131202" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Encryption Password Assigned: $(Description)</description>
+    <field name="EventID">31855</field>
+  </rule>
+  <rule id="131203" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>SSH Credentials Changed: $(Description)</description>
+    <field name="EventID">31900</field>
+  </rule>
+  <rule id="131204" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>External Repository Added: $(Description)</description>
+    <field name="EventID">32000</field>
+  </rule>
+  <rule id="131205" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>External Repository Settings Updated: $(Description)</description>
+    <field name="EventID">32100</field>
+  </rule>
+  <rule id="131206" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects for Job Deleted: $(Description)</description>
+    <field name="EventID">32120</field>
+  </rule>
+  <rule id="131207" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>External Repository Deleted: $(Description)</description>
+    <field name="EventID">32200</field>
+  </rule>
+  <rule id="131208" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global Network Traffic Rules Added: $(Description)</description>
+    <field name="EventID">32300</field>
+  </rule>
+  <rule id="131209" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global Network Traffic Rules Deleted: $(Description)</description>
+    <field name="EventID">32400</field>
+  </rule>
+  <rule id="131210" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global Network Traffic Rules Updated: $(Description)</description>
+    <field name="EventID">32500</field>
+  </rule>
+  <rule id="131211" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Preferred Networks Updated: $(Description)</description>
+    <field name="EventID">32600</field>
+  </rule>
+  <rule id="131212" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Preferred Networks Added: $(Description)</description>
+    <field name="EventID">32700</field>
+  </rule>
+  <rule id="131213" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Preferred Networks Deleted: $(Description)</description>
+    <field name="EventID">32800</field>
+  </rule>
+  <rule id="131214" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Component Updated: $(Description)</description>
+    <field name="EventID">32900</field>
+  </rule>
+  <rule id="131215" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Wan Accelerator Cache Populated: $(Description)</description>
+    <field name="EventID">33000</field>
+  </rule>
+  <rule id="131216" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Wan Accelerator Cache Cleared: $(Description)</description>
+    <field name="EventID">33001</field>
+  </rule>
+  <rule id="131217" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Recovery Token Created: $(Description)</description>
+    <field name="EventID">36011</field>
+  </rule>
+  <rule id="131218" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Recovery Token Updated: $(Description)</description>
+    <field name="EventID">36012</field>
+  </rule>
+  <rule id="131219" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Recovery Token Deleted: $(Description)</description>
+    <field name="EventID">36013</field>
+  </rule>
+  <rule id="131220" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Authentication with Recovery Token Succeeded: $(Description)</description>
+    <field name="EventID">36014</field>
+  </rule>
+  <rule id="131221" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Job for Application Backup Policy Started: $(Description)</description>
+    <field name="EventID">36021</field>
+  </rule>
+  <rule id="131222" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Job for Application Backup Policy Finished: $(Description)</description>
+    <field name="EventID">36022</field>
+  </rule>
+  <rule id="131223" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Task for Application Backup Policy Started: $(Description)</description>
+    <field name="EventID">36023</field>
+  </rule>
+  <rule id="131224" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Backup Task for Application Backup Policy Finished: $(Description)</description>
+    <field name="EventID">36024</field>
+  </rule>
+  <rule id="131225" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Log Backup Job for Application Backup Policy Started: $(Description)</description>
+    <field name="EventID">36025</field>
+  </rule>
+  <rule id="131226" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Log Backup Job for Application Backup Policy Finished: $(Description)</description>
+    <field name="EventID">36026</field>
+  </rule>
+  <rule id="131227" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Generic Event for External Infrastructure Created: $(Description)</description>
+    <field name="EventID">36100</field>
+  </rule>
+  <rule id="131228" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Managed Proxy Established: $(Description)</description>
+    <field name="EventID">36200</field>
+  </rule>
+  <rule id="131229" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Managed Proxy Lost: $(Description)</description>
+    <field name="EventID">36300</field>
+  </rule>
+  <rule id="131230" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Platform Service Established: $(Description)</description>
+    <field name="EventID">36400</field>
+  </rule>
+  <rule id="131231" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection with Platform Service Lost: $(Description)</description>
+    <field name="EventID">36500</field>
+  </rule>
+  <rule id="131232" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection from Platform Service to Managed Proxy Established: $(Description)</description>
+    <field name="EventID">36600</field>
+  </rule>
+  <rule id="131233" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Connection from Platform Service to Managed Proxy Lost: $(Description)</description>
+    <field name="EventID">36700</field>
+  </rule>
+  <rule id="131234" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Data Synchronization Interrupted: $(Description)</description>
+    <field name="EventID">36800</field>
+  </rule>
+  <rule id="131235" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Data Synchronization Resumed: $(Description)</description>
+    <field name="EventID">36900</field>
+  </rule>
+  <rule id="131236" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Configuration Database Connected: $(Description)</description>
+    <field name="EventID">40001</field>
+  </rule>
+  <rule id="131237" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Management Session Finished: $(Description)</description>
+    <field name="EventID">40002</field>
+  </rule>
+  <rule id="131238" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>VeeamÂ BackupÂ &amp;Â Replication Console Launched: $(Description)</description>
+    <field name="EventID">40100</field>
+  </rule>
+  <rule id="131239" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>VeeamÂ BackupÂ &amp;Â Replication Console Closed: $(Description)</description>
+    <field name="EventID">40101</field>
+  </rule>
+  <rule id="131240" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Multi-Factor Authentication Enabled: $(Description)</description>
+    <field name="EventID">40200</field>
+  </rule>
+  <rule id="131241" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Multi-Factor Authentication Disabled: $(Description)</description>
+    <field name="EventID">40201</field>
+  </rule>
+  <rule id="131242" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Multi-Factor Authentication Token Revoked: $(Description)</description>
+    <field name="EventID">40202</field>
+  </rule>
+  <rule id="131243" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Multi-Factor Authentication for User Enabled: $(Description)</description>
+    <field name="EventID">40203</field>
+  </rule>
+  <rule id="131244" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Multi-Factor Authentication for User Disabled: $(Description)</description>
+    <field name="EventID">40204</field>
+  </rule>
+  <rule id="131245" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Invalid Code for Multi-Factor Authentication Entered: $(Description)</description>
+    <field name="EventID">40205</field>
+  </rule>
+  <rule id="131246" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Allowed Attempts for Multi-Factor Authentication Exceeded: $(Description)</description>
+    <field name="EventID">40206</field>
+  </rule>
+  <rule id="131247" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Code for Multi-Factor Authentication Already Used: $(Description)</description>
+    <field name="EventID">40207</field>
+  </rule>
+  <rule id="131248" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Session Started: $(Description)</description>
+    <field name="EventID">40210</field>
+  </rule>
+  <rule id="131249" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Session Finished: $(Description)</description>
+    <field name="EventID">40290</field>
+  </rule>
+  <rule id="131250" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Logs Export Session Finished: $(Description)</description>
+    <field name="EventID">40300</field>
+  </rule>
+  <rule id="131251" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global VM Exclusions Added: $(Description)</description>
+    <field name="EventID">40400</field>
+  </rule>
+  <rule id="131252" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global VM Exclusions Deleted: $(Description)</description>
+    <field name="EventID">40500</field>
+  </rule>
+  <rule id="131253" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Global VM Exclusions Changed: $(Description)</description>
+    <field name="EventID">40600</field>
+  </rule>
+  <rule id="131254" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Configuration Backup Job Finished: $(Description)</description>
+    <field name="EventID">40700</field>
+  </rule>
+  <rule id="131255" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Configuration Restore Session Finished: $(Description)</description>
+    <field name="EventID">40800</field>
+  </rule>
+  <rule id="131256" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Location Added: $(Description)</description>
+    <field name="EventID">40900</field>
+  </rule>
+  <rule id="131257" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Location Settings Updated: $(Description)</description>
+    <field name="EventID">40901</field>
+  </rule>
+  <rule id="131258" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Location Deleted: $(Description)</description>
+    <field name="EventID">40902</field>
+  </rule>
+  <rule id="131259" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Location Changed: $(Description)</description>
+    <field name="EventID">40903</field>
+  </rule>
+  <rule id="131260" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Downloading Backup Metadata Started: $(Description)</description>
+    <field name="EventID">41000</field>
+  </rule>
+  <rule id="131261" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Downloading Backup Metadata Finished: $(Description)</description>
+    <field name="EventID">41001</field>
+  </rule>
+  <rule id="131262" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Detaching Backups Started: $(Description)</description>
+    <field name="EventID">41200</field>
+  </rule>
+  <rule id="131263" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Copying Backups Started: $(Description)</description>
+    <field name="EventID">41201</field>
+  </rule>
+  <rule id="131264" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Moving Backups Started: $(Description)</description>
+    <field name="EventID">41202</field>
+  </rule>
+  <rule id="131265" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Report Created: $(Description)</description>
+    <field name="EventID">41300</field>
+  </rule>
+  <rule id="131266" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Automatic License Update Disabled: $(Description)</description>
+    <field name="EventID">41301</field>
+  </rule>
+  <rule id="131267" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>License Consumption for Veeam Agents Disabled: $(Description)</description>
+    <field name="EventID">41302</field>
+  </rule>
+  <rule id="131268" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object License Revoked: $(Description)</description>
+    <field name="EventID">41303</field>
+  </rule>
+  <rule id="131269" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object License Removed: $(Description)</description>
+    <field name="EventID">41304</field>
+  </rule>
+  <rule id="131270" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object License Assigned: $(Description)</description>
+    <field name="EventID">41305</field>
+  </rule>
+  <rule id="131271" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Proactive Support Disabled: $(Description)</description>
+    <field name="EventID">41306</field>
+  </rule>
+  <rule id="131272" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Added: $(Description)</description>
+    <field name="EventID">41400</field>
+  </rule>
+  <rule id="131273" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Settings Updated: $(Description)</description>
+    <field name="EventID">41401</field>
+  </rule>
+  <rule id="131274" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Deleted: $(Description)</description>
+    <field name="EventID">41402</field>
+  </rule>
+  <rule id="131275" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Rescan Started Manually: $(Description)</description>
+    <field name="EventID">41403</field>
+  </rule>
+  <rule id="131276" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Rescan Started Automatically: $(Description)</description>
+    <field name="EventID">41404</field>
+  </rule>
+  <rule id="131277" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Storage Rescan Finished: $(Description)</description>
+    <field name="EventID">41405</field>
+  </rule>
+  <rule id="131278" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Mounted: $(Description)</description>
+    <field name="EventID">41500</field>
+  </rule>
+  <rule id="131279" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Unmounted: $(Description)</description>
+    <field name="EventID">41510</field>
+  </rule>
+  <rule id="131280" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Activity Detected: $(Description)</description>
+    <field name="EventID">41600</field>
+  </rule>
+  <rule id="131281" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Marked as Clean: $(Description)</description>
+    <field name="EventID">41610</field>
+  </rule>
+  <rule id="131282" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Object Automatically Marked as Clean: $(Description)</description>
+    <field name="EventID">41615</field>
+  </rule>
+  <rule id="131283" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Health Check Job Started: $(Description)</description>
+    <field name="EventID">41700</field>
+  </rule>
+  <rule id="131284" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Health Check Job Finished: $(Description)</description>
+    <field name="EventID">41710</field>
+  </rule>
+  <rule id="131285" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Attempt to Delete Backup Failed: $(Description)</description>
+    <field name="EventID">41800</field>
+  </rule>
+  <rule id="131286" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Attempt To Update Security Object Failed: $(Description)</description>
+    <field name="EventID">41810</field>
+  </rule>
+  <rule id="131287" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Downloading Object Storage Backup Metadata Started: $(Description)</description>
+    <field name="EventID">42000</field>
+  </rule>
+  <rule id="131288" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Downloading Object Storage Backup Metadata Finished: $(Description)</description>
+    <field name="EventID">42001</field>
+  </rule>
+  <rule id="131289" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Detection Session Started: $(Description)</description>
+    <field name="EventID">42200</field>
+  </rule>
+  <rule id="131290" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Detection Session Finished: $(Description)</description>
+    <field name="EventID">42210</field>
+  </rule>
+  <rule id="131291" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Marked as Infected: $(Description)</description>
+    <field name="EventID">42220</field>
+  </rule>
+  <rule id="131292" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Restore Point Marked as Clean: $(Description)</description>
+    <field name="EventID">42230</field>
+  </rule>
+  <rule id="131293" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects Added to Malware Detection Exclusions: $(Description)</description>
+    <field name="EventID">42260</field>
+  </rule>
+  <rule id="131294" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Objects Deleted from Malware Detection Exclusions: $(Description)</description>
+    <field name="EventID">42270</field>
+  </rule>
+  <rule id="131295" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Detection Exclusions List Updated: $(Description)</description>
+    <field name="EventID">42280</field>
+  </rule>
+  <rule id="131296" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Malware Detection Settings Updated: $(Description)</description>
+    <field name="EventID">42290</field>
+  </rule>
+  <rule id="131297" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>KMS Server Added: $(Description)</description>
+    <field name="EventID">42300</field>
+  </rule>
+  <rule id="131298" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>KMS Server Deleted: $(Description)</description>
+    <field name="EventID">42301</field>
+  </rule>
+  <rule id="131299" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>KMS Server Settings Updated: $(Description)</description>
+    <field name="EventID">42302</field>
+  </rule>
+  <rule id="131300" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Enabled: $(Description)</description>
+    <field name="EventID">42400</field>
+  </rule>
+  <rule id="131301" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Disabled: $(Description)</description>
+    <field name="EventID">42401</field>
+  </rule>
+  <rule id="131302" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Request Created: $(Description)</description>
+    <field name="EventID">42402</field>
+  </rule>
+  <rule id="131303" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Request Approved: $(Description)</description>
+    <field name="EventID">42403</field>
+  </rule>
+  <rule id="131304" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Request Rejected: $(Description)</description>
+    <field name="EventID">42404</field>
+  </rule>
+  <rule id="131305" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Four-Eyes Authorization Request Expired: $(Description)</description>
+    <field name="EventID">42405</field>
+  </rule>
+  <rule id="131306" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>KMS Key Rotation Job Finished: $(Description)</description>
+    <field name="EventID">42500</field>
+  </rule>
+  <rule id="131307" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>SAML Settings Updated: $(Description)</description>
+    <field name="EventID">42800</field>
+  </rule>
+  <rule id="131308" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Security &amp; Compliance Analyzer Session Finished: $(Description)</description>
+    <field name="EventID">42900</field>
+  </rule>
+  <rule id="131309" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Security &amp; Compliance Analyzer Settings Updated: $(Description)</description>
+    <field name="EventID">42901</field>
+  </rule>
+  <rule id="131310" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Best Practice Suppressed: $(Description)</description>
+    <field name="EventID">42902</field>
+  </rule>
+  <rule id="131311" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Best Practice Reset: $(Description)</description>
+    <field name="EventID">42903</field>
+  </rule>
+  <rule id="131312" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster Created: $(Description)</description>
+    <field name="EventID">43000</field>
+  </rule>
+  <rule id="131313" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster Updated: $(Description)</description>
+    <field name="EventID">43001</field>
+  </rule>
+  <rule id="131314" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster Removed: $(Description)</description>
+    <field name="EventID">43002</field>
+  </rule>
+  <rule id="131315" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster State Changed: $(Description)</description>
+    <field name="EventID">43003</field>
+  </rule>
+  <rule id="131316" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster Failover Started: $(Description)</description>
+    <field name="EventID">43004</field>
+  </rule>
+  <rule id="131317" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>High Availability Cluster Switchover Started: $(Description)</description>
+    <field name="EventID">43006</field>
+  </rule>
+  <rule id="131318" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Token Request Approved: $(Description)</description>
+    <field name="EventID">44000</field>
+  </rule>
+  <rule id="131319" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Token Request Rejected: $(Description)</description>
+    <field name="EventID">44001</field>
+  </rule>
+  <rule id="131320" level="6">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>User Authorization Denied: $(Description)</description>
+    <field name="EventID">44002</field>
+  </rule>
+  <rule id="131321" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>User Authorization Granted: $(Description)</description>
+    <field name="EventID">44003</field>
+  </rule>
+  <rule id="131322" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Password Change Required: $(Description)</description>
+    <field name="EventID">44004</field>
+  </rule>
+  <rule id="131323" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Token Chain Revoked: $(Description)</description>
+    <field name="EventID">44005</field>
+  </rule>
+  <rule id="131324" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Resource Access Denied: $(Description)</description>
+    <field name="EventID">44006</field>
+  </rule>
+  <rule id="131325" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Remote Bare Metal Recovery Requested: $(Description)</description>
+    <field name="EventID">44100</field>
+  </rule>
+  <rule id="131326" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Remote Bare Metal Recovery Started: $(Description)</description>
+    <field name="EventID">44101</field>
+  </rule>
+  <rule id="131327" level="8">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Remote Bare Metal Recovery Finished: $(Description)</description>
+    <field name="EventID">44102</field>
+  </rule>
+  <rule id="131328" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Session Started: $(Description)</description>
+    <field name="EventID">44200</field>
+  </rule>
+  <rule id="131329" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Session Finished: $(Description)</description>
+    <field name="EventID">44201</field>
+  </rule>
+  <rule id="131330" level="3">
+    <decoded_as>Veeam MP</decoded_as>
+    <description>Entropy Analysis Results Downloaded: $(Description)</description>
+    <field name="EventID">44202</field>
+  </rule>
+</group>
