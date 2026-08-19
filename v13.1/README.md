@@ -13,20 +13,26 @@ ID list (helpcenter.veeam.com/docs/vbr/events/event_id_list.html?ver=13).
 - `decoders_13.1.xml` — syslog decoders for VBR 13.1's structured-data format.
 - `Generic_Veeam_rules_13.1.xml` — one rule per event ID (331 rules, IDs 131000–131330;
   level set by severity).
-- `Field_Veeam_Rules_13.1.xml` — field-specific rules for security-relevant events
+- `Veeam_Field_Rules_13.1.xml` — field-specific rules for security-relevant events
   (malware detection, compliance analyzer, credentials, licenses; 71 rules, IDs 132000–132070),
   of which 5 are elevated to level 12 ("Potential IOC") for critical activity:
   malware detected, restore point infected, and malware-exclusion-list add/update/settings.
   Each field rule is chained to its generic counterpart via `if_sid` so one real event
-  produces one alert, not two.
+  produces one alert, not two. Named to sort alphabetically **after**
+  `Generic_Veeam_rules_13.1.xml` — see Task 10 findings below for why that matters.
 
 ## Deploy
 
 ```bash
 cp decoders_13.1.xml /var/ossec/etc/decoders/
-cp Generic_Veeam_rules_13.1.xml Field_Veeam_Rules_13.1.xml /var/ossec/etc/rules/
+cp Generic_Veeam_rules_13.1.xml Veeam_Field_Rules_13.1.xml /var/ossec/etc/rules/
 systemctl restart wazuh-manager
 ```
+
+The two rule files can be copied in either order — Wazuh loads `/var/ossec/etc/rules/`
+alphabetically regardless of copy order, and `Veeam_Field_Rules_13.1.xml` is named to
+always sort after `Generic_Veeam_rules_13.1.xml` so its `if_sid` references resolve. Don't
+rename either file without checking this ordering still holds (see Task 10 findings).
 
 ## Rule IDs
 
@@ -74,9 +80,10 @@ was updated to strip the anchors before comparing against the CSV's plain numeri
 
 **4. `Generic_Veeam_rules_13.1.xml` referenced the wrong decoder name.** All 331 rules used
 `<decoded_as>Veeam MP</decoded_as>`, but the decoder is named `Veeam MP 13.1`
-(`Field_Veeam_Rules_13.1.xml` had this right). Combined with bugs 1–3, this meant the
-generic ruleset could never have fired under any circumstances pre-Task-10. Fixed by
-updating all 331 `<decoded_as>` values to `Veeam MP 13.1`.
+(`Field_Veeam_Rules_13.1.xml`, since renamed `Veeam_Field_Rules_13.1.xml`, had this right).
+Combined with bugs 1–3, this meant the generic ruleset could never have fired under any
+circumstances pre-Task-10. Fixed by updating all 331 `<decoded_as>` values to
+`Veeam MP 13.1`.
 
 After all four fixes, all 49 real captured lines decode via the `Veeam MP 13.1` decoder,
 extract the correct `EventID` from `instanceId`, and match the exact correct generic rule
@@ -84,27 +91,35 @@ extract the correct `EventID` from `instanceId`, and match the exact correct gen
 EventIDs including startup/finish pairs, VM restore points, malware detection, config
 backup, SureBackup, and restore sessions.
 
-**Known limitation found, not fixable in this ruleset:** on the test manager's Wazuh build
-(v4.14.7-rc1), `if_sid` cross-file rule chaining does not work when the parent rule uses
-`<decoded_as>`. Isolated with minimal synthetic rules: a same-file `if_sid` chain between
-two trivial `<match>`-based rules resolves and fires correctly; the moment the parent rule
-adds a `<decoded_as>` constraint (regardless of which decoder, real or synthetic, and
-regardless of matching or mismatched `<group>` names between the two rule files), the child
-rule's `if_sid` fails to resolve (`wazuh-analysisd -t` warns "Signature ID not found") and,
-confirmed via `wazuh-logtest`, the child rule is never even attempted at runtime — the
-generic rule fires standalone every time. This affects all 71 rules in
-`Field_Veeam_Rules_13.1.xml`, since every one of them uses `decoded_as` (needed to scope
-matching to Veeam-decoded events). `wazuh-analysisd -t` only ever surfaces this for a
-subset of the 71 as an explicit warning (the count varies with total rule load — 25 of 71
-in the full file, more when the file is trimmed smaller) but functional testing shows the
-chain doesn't fire for any of them, warned-about or not. This looks like an engine-level
-limitation or bug specific to this rc build rather than anything fixable by editing rule
-content — worth retesting on a non-rc Wazuh release, or filing upstream. Until resolved,
-field rules 132000–132070 should be treated as **not currently firing** on this manager;
-the underlying generic rules (131000–131330) still fire correctly and independently for
-the same events, so detection coverage is intact at the generic level, just without the
-field-rule enrichment/escalation (e.g. malware detection still alerts at its generic level,
-just not at the elevated level-12 "Potential IOC" the field rule would apply).
+**5. `Field_Veeam_Rules_13.1.xml` sorted alphabetically before `Generic_Veeam_rules_13.1.xml`
+in `/var/ossec/etc/rules/`, breaking every `if_sid` reference.** Wazuh's `<rule_dir>` loads
+every file in a directory in alphabetical (byte) order, and `if_sid` can only resolve to a
+rule ID already registered by an earlier-loaded file — a classic forward-reference problem.
+With `F` < `G`, the field rules file always loaded before the generic rules file it
+references, so every one of the 71 `if_sid` chains was a forward reference and none of them
+ever resolved. `wazuh-analysisd -t` only explicitly warned about a subset (25 of 71 in the
+full deployment — the exact count is an artifact of file size/hashing, not meaningful on
+its own), but live `wazuh-logtest` testing confirmed **none** of the 71 field rules fired
+at runtime, including `if_sid` targets that produced no load-time warning at all (e.g. rule
+132034 → `if_sid` 131280 loaded with no warning, yet still never fired). An initial
+isolation pass (see git history) misattributed this to `<decoded_as>` breaking cross-file
+`if_sid` resolution — that theory happened to fit the data because every isolated test case
+built to check it also, incidentally, kept the same F-before-G file-load order; it never
+actually controlled for load order as a separate variable. Retested properly this time:
+renaming the deployed field-rules file to sort after the generic-rules file (no content
+changes at all) made every "not found" warning disappear, and rule 132034 fired correctly
+on the very same real captured line that had failed before. Fixed for real, permanently,
+by renaming the file to `Veeam_Field_Rules_13.1.xml` in the repo (`V` > `G`, so it always
+sorts after `Generic_Veeam_rules_13.1.xml` regardless of deploy/copy order) — a self-sorting
+filename is more robust for a future deployer than a copy-order instruction buried in a
+README section they might not read.
+
+After fix 5 (the rename), field-rule chaining was retested end to end: `wazuh-analysisd -t`
+runs with zero "Signature ID not found" warnings, and `wazuh-logtest` against the real
+malware-activity line (EventID 41600) now shows rule 131280 (generic) matching and
+escalating correctly to rule 132034 (field, level 12, `mitre.id: ['T1204', 'T1486']`) as
+the final alert — exactly the intended one-alert-per-event behavior. Field rules
+132000–132070 are confirmed firing correctly, with no remaining known engine limitation.
 
 **Event categories not seen in live traffic** (validated by CSV/decoder-logic review only,
 not live-fired): most of the ~310 event IDs outside the 19 exercised above — this test

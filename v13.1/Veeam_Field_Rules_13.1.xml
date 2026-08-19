@@ -1,5 +1,19 @@
-<!-- v13.1/Field_Veeam_Rules_13.1.xml -->
+<!-- v13.1/Veeam_Field_Rules_13.1.xml -->
 <!-- Veeam Backup & Replication 13.1 -->
+<!-- NOTE ON FILENAME: this file was renamed from Field_Veeam_Rules_13.1.xml during -->
+<!-- Task 10 live validation. Wazuh's <rule_dir> loads files in a directory in -->
+<!-- alphabetical (byte) order, and if_sid can only resolve to a rule ID already -->
+<!-- registered by an earlier-loaded file. With the old name, "Field_..." sorted -->
+<!-- BEFORE "Generic_Veeam_rules_13.1.xml" in /var/ossec/etc/rules/, so every if_sid -->
+<!-- reference here to a generic rule id was a forward reference and silently failed -->
+<!-- to resolve; confirmed live: analysisd -t warned "Signature ID not found" for a -->
+<!-- Generic-file-position-dependent subset, and wazuh-logtest showed NONE of these -->
+<!-- rules ever fired at runtime, including if_sid targets that produced no warning. -->
+<!-- Renaming to "Veeam_Field_Rules_13.1.xml" (V > G) makes it sort after -->
+<!-- Generic_Veeam_rules_13.1.xml unconditionally, regardless of deploy order/cp -->
+<!-- order; confirmed live: after the rename, the "not found" warnings disappeared -->
+<!-- entirely and every if_sid chain (including ones untouched by the rename, e.g. -->
+<!-- rule 132034 chained to if_sid 131280) fired correctly via wazuh-logtest. -->
 <!-- Field-specific rules for the security-relevant event subset (Users, -->
 <!-- Credential Records, Malware Detection, Licenses, Security & Compliance -->
 <!-- Analyzer categories from the live 13.1 scrape). Each rule is chained to -->
