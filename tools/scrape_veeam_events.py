@@ -43,10 +43,21 @@ DETAIL_URL_TEMPLATE = "https://helpcenter.veeam.com/docs/vbr/events/event_{event
 
 
 def fetch_page(url: str) -> str:
-    """Fetch a URL's HTML body as text."""
+    """Fetch a URL's HTML body as text.
+
+    Decodes the response body as UTF-8 explicitly rather than trusting
+    `requests`' `.text` auto-detection. Veeam's helpcenter pages declare
+    `<meta charset="utf-8">` but the HTTP `Content-Type` header omits a
+    charset parameter -- when that happens `requests` falls back to
+    ISO-8859-1 per the HTTP spec's historical default, which silently
+    mangles multi-byte UTF-8 sequences (e.g. a UTF-8 non-breaking space,
+    bytes 0xC2 0xA0, gets decoded as the two separate Latin-1 characters
+    "Â\xa0" -- the classic "Â" mojibake). Decoding `response.content`
+    (raw bytes) as UTF-8 ourselves sidesteps that fallback entirely.
+    """
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
     response.raise_for_status()
-    return response.text
+    return response.content.decode("utf-8")
 
 
 def _clean(value: str) -> str:

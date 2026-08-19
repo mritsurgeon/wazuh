@@ -1,10 +1,11 @@
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from tools.scrape_veeam_events import (
     FIELDS,
     enrich_events_with_details,
     fetch_event_detail,
+    fetch_page,
     parse_events_table,
     write_csv,
 )
@@ -165,3 +166,31 @@ def test_write_csv_includes_parameters_column(tmp_path):
     assert lines[0] == ",".join(FIELDS)
     assert "parameters" in FIELDS
     assert 'JobSessionID=""abc"";JobID=""def""' in lines[1] or 'JobSessionID=\\"abc\\"' in lines[1] or "abc" in lines[1]
+
+
+def test_fetch_page_decodes_utf8_body_even_without_charset_in_content_type():
+    """Regression test for the requests-decodes-as-Latin-1 mojibake bug.
+
+    When a server's Content-Type header omits a charset (as Veeam's
+    helpcenter does -- it sends plain "text/html"), `requests`' `.text`
+    property falls back to ISO-8859-1 decoding even though the actual body
+    bytes are UTF-8. That mangles multi-byte characters like a non-breaking
+    space (U+00A0, UTF-8 bytes 0xC2 0xA0) into "Â\xa0". fetch_page() must
+    decode `response.content` as UTF-8 directly instead of relying on
+    `response.text`, so this must survive intact.
+    """
+    body_text = "Veeam Backup & Replication"
+    body_bytes = body_text.encode("utf-8")
+
+    fake_response = MagicMock()
+    fake_response.content = body_bytes
+    # No charset parameter, matching the real helpcenter server behavior --
+    # this is what triggers requests' Latin-1 fallback via response.text.
+    fake_response.headers = {"Content-Type": "text/html"}
+    fake_response.raise_for_status = lambda: None
+
+    with patch("tools.scrape_veeam_events.requests.get", return_value=fake_response):
+        html = fetch_page("https://helpcenter.veeam.com/docs/vbr/events/event_110.html")
+
+    assert html == body_text
+    assert "Â" not in html  # the mojibake "Â" character must not appear

@@ -1193,12 +1193,12 @@
   </rule>
   <rule id="131238" level="3">
     <decoded_as>Veeam MP</decoded_as>
-    <description>VeeamÂ BackupÂ &amp;Â Replication Console Launched: $(Description)</description>
+    <description>Veeam Backup &amp; Replication Console Launched: $(Description)</description>
     <field name="EventID">40100</field>
   </rule>
   <rule id="131239" level="3">
     <decoded_as>Veeam MP</decoded_as>
-    <description>VeeamÂ BackupÂ &amp;Â Replication Console Closed: $(Description)</description>
+    <description>Veeam Backup &amp; Replication Console Closed: $(Description)</description>
     <field name="EventID">40101</field>
   </rule>
   <rule id="131240" level="3">
