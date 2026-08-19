@@ -59,10 +59,22 @@ In the field-specific rules XML file, you'll find rules that utilize specific fi
 - Field: Specifies the fields within the event data that the rule is targeting for correlation. Here, it's looking at the "Object" field with the value "Backup" and the "State" field with values matching the regular expression pattern "^mounted." or "unmounted."
 These field-specific rules offer more granular control over event analysis by focusing on specific attributes within Veeam events. Users can use these rules as templates for creating custom correlations and alerts tailored to their specific environment and requirements.
 
-You will find 2 Rule files in the Github Repo:
+## Versions
 
-- Field_Veeam_Rules.xml: Some Custom Rule Examples with Mitre IDs.
-- Generic_Veeam_rules.xml: Full Veeam Event ID List.
+This repo provides two independent, self-contained rule/decoder sets:
+
+- **`v12.1/`** — original decoders and rules for Veeam Backup & Replication v12.1 (200+ event IDs).
+- **`v13.1/`** — decoders and rules for Veeam Backup & Replication 13.1, covering the full
+  official event ID list (see `v13.1/README.md` for details and deployment steps).
+
+Deploy only the folder matching your VBR version. Rule IDs are non-overlapping between
+the two sets (v12.1 uses the 100000s range; v13.1 uses 131000+), so both can be loaded
+on the same Wazuh manager simultaneously if needed during a migration.
+
+You will find 2 rule files per version:
+
+- `Field_Veeam_Rules[_13.1].xml`: Custom rule examples with MITRE IDs, for security-relevant events.
+- `Generic_Veeam_rules[_13.1].xml`: Full Veeam Event ID list, one rule per event ID.
 
 ## Conclusion:
 
