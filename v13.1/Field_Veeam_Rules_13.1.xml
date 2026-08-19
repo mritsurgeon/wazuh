@@ -14,6 +14,7 @@
 <!-- if_sid + decoded_as + $(Description) alone. -->
 
 <group name="Veeam_Backup_Replication_13.1_Security">
+  <!-- Licenses -->
   <rule id="132000" level="3">
     <if_sid>131093</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -67,6 +68,7 @@
     </mitre>
   </rule>
 
+  <!-- Credential Records -->
   <rule id="132008" level="3">
     <if_sid>131120</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -97,6 +99,7 @@
     </mitre>
   </rule>
 
+  <!-- Users -->
   <rule id="132011" level="3">
     <if_sid>131191</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -153,6 +156,7 @@
     </mitre>
   </rule>
 
+  <!-- Credential Records -->
   <rule id="132017" level="3">
     <if_sid>131198</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -208,6 +212,7 @@
     </mitre>
   </rule>
 
+  <!-- Users -->
   <rule id="132023" level="3">
     <if_sid>131240</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -276,6 +281,7 @@
     </mitre>
   </rule>
 
+  <!-- Licenses -->
   <rule id="132031" level="3">
     <if_sid>131265</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -294,6 +300,7 @@
     <description>Proactive Support Disabled: $(Description)</description>
   </rule>
 
+  <!-- Malware Detection -->
   <rule id="132034" level="12">
     <if_sid>131280</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -319,6 +326,7 @@
     <description>Object Automatically Marked as Clean: $(Description)</description>
   </rule>
 
+  <!-- Credential Records -->
   <rule id="132037" level="6">
     <if_sid>131286</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -328,6 +336,7 @@
     </mitre>
   </rule>
 
+  <!-- Malware Detection -->
   <rule id="132038" level="3">
     <if_sid>131289</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -360,7 +369,7 @@
     </mitre>
   </rule>
 
-  <rule id="132042" level="3">
+  <rule id="132042" level="12">
     <if_sid>131293</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>Objects Added to Malware Detection Exclusions: $(Description)</description>
@@ -372,7 +381,7 @@
     </mitre>
   </rule>
 
-  <rule id="132043" level="3">
+  <rule id="132043" level="12">
     <if_sid>131294</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>Objects Deleted from Malware Detection Exclusions: $(Description)</description>
@@ -393,7 +402,7 @@
     </mitre>
   </rule>
 
-  <rule id="132045" level="3">
+  <rule id="132045" level="12">
     <if_sid>131296</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>Malware Detection Settings Updated: $(Description)</description>
@@ -405,6 +414,7 @@
     </mitre>
   </rule>
 
+  <!-- Credential Records -->
   <rule id="132046" level="3">
     <if_sid>131297</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -431,6 +441,7 @@
     </mitre>
   </rule>
 
+  <!-- Users -->
   <rule id="132049" level="3">
     <if_sid>131300</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -479,12 +490,14 @@
     </mitre>
   </rule>
 
+  <!-- Credential Records -->
   <rule id="132055" level="8">
     <if_sid>131306</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>KMS Key Rotation Job Finished: $(Description)</description>
   </rule>
 
+  <!-- Users -->
   <rule id="132056" level="3">
     <if_sid>131307</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -495,6 +508,7 @@
     </mitre>
   </rule>
 
+  <!-- Security & Compliance Analyzer -->
   <rule id="132057" level="3">
     <if_sid>131308</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -522,6 +536,7 @@
     <description>Best Practice Reset: $(Description)</description>
   </rule>
 
+  <!-- Users -->
   <rule id="132061" level="3">
     <if_sid>131318</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
@@ -564,6 +579,7 @@
     <description>Resource Access Denied: $(Description)</description>
   </rule>
 
+  <!-- Malware Detection -->
   <rule id="132068" level="3">
     <if_sid>131328</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
