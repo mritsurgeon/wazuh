@@ -1,0 +1,91 @@
+<!-- v13.1/decoders_13.1.xml -->
+<!-- Veeam Backup & Replication 13.1 -->
+<!-- syslog Log Decoders — RFC 5424 structured data -->
+<!-- Modeled on v12.1/decoders.xml; fixes a field-naming bug where the base -->
+<!-- decoder captured the event number as "categoryId" while every rule in -->
+<!-- v12.1/Generic_Veeam_rules.xml matched on "EventID", so no v12.1 generic -->
+<!-- rule could ever fire. Here the field is named EventID directly. -->
+<!-- Additional Enhanced decoders below cover the highest-frequency -->
+<!-- structured-data fields found in the live 13.1 scrape (v13.1/veeam_events_13.1.csv, -->
+<!-- 331 events, 213 unique field names) beyond the brief's starting set: -->
+<!-- VbrHostName/VbrVersion (311/331 events — envelope/header data present on -->
+<!-- nearly every event), plus Result and SourceType as broadly useful fields. -->
+<!-- This is a starting set, not exhaustive — Task 10's live SSH validation -->
+<!-- against real captured log lines is where this gets corrected/expanded. -->
+
+<decoder name="Veeam MP 13.1">
+    <prematch type="pcre2">Veeam_MP - - \[categoryId=([^\s]+) instanceId=([^\s]+)</prematch>
+    <order>EventID, instanceId</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">JobSessionID="([^"]+)"</regex>
+    <order>JobSessionID</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">JobID="([^"]+)"</regex>
+    <order>JobID</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">JobType="([^"]+)"</regex>
+    <order>JobType</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">VmName="([^"]+)"</regex>
+    <order>VmName</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">UserName="([^"]+)</regex>
+    <order>User</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">Description="([^"]+)"</regex>
+    <order>Description</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">VbrHostName="([^"]+)"</regex>
+    <order>VbrHostName</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">VbrVersion="([^"]+)"</regex>
+    <order>VbrVersion</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">Result="([^"]+)"</regex>
+    <order>Result</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">SourceType="([^"]+)"</regex>
+    <order>SourceType</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 General">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">Description="(.*?) have been (.*?)"</regex>
+    <order>Object, State</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 General">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">Description="([^"]+) job '([^"]+)' has been</regex>
+    <order>Job, JobName</order>
+</decoder>
