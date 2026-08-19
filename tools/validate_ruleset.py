@@ -56,12 +56,16 @@ def check_event_coverage(generic_path: str, csv_path: str) -> list[str]:
 
 
 def check_if_sid_resolves(field_path: str, generic_path: str) -> list[str]:
-    generic_ids = set(_all_rule_ids(generic_path)) | set(_all_rule_ids(field_path))
+    # Deliberately generic-only, not a union with field_path's own IDs: Task 8's
+    # design is one field rule chained directly to its generic counterpart, never
+    # field-to-field. Accepting a field-to-field if_sid here would hide a real
+    # authoring mistake during Task 8.
+    generic_ids = set(_all_rule_ids(generic_path))
     tree = etree.parse(field_path)
     errors = []
     for el in tree.findall(".//rule/if_sid"):
         if el.text not in generic_ids:
-            errors.append(f"if_sid {el.text} does not resolve to any known rule id")
+            errors.append(f"if_sid {el.text} does not resolve to any known generic rule id")
     return errors
 
 

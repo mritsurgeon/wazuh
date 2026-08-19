@@ -45,3 +45,17 @@ def test_check_if_sid_resolves_flags_dangling_reference(tmp_path):
         "<group><rule id='132000' level='6'><if_sid>131999</if_sid></rule></group>")
     errors = check_if_sid_resolves(field, generic)
     assert any("131999" in e for e in errors)
+
+def test_check_if_sid_resolves_flags_field_to_field_reference(tmp_path):
+    # if_sid must resolve against the generic rules file specifically — a field
+    # rule referencing another field rule's id is not a valid chain in this
+    # design (Task 8: one field rule -> its one generic counterpart, no
+    # field-to-field), even though 132001 really exists in field.xml.
+    generic = write(tmp_path / "g.xml", "<group><rule id='131000' level='3'></rule></group>")
+    field = write(tmp_path / "f.xml",
+        "<group>"
+        "<rule id='132001' level='6'></rule>"
+        "<rule id='132002' level='8'><if_sid>132001</if_sid></rule>"
+        "</group>")
+    errors = check_if_sid_resolves(field, generic)
+    assert any("132001" in e for e in errors)
