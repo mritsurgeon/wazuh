@@ -381,7 +381,7 @@
     </mitre>
   </rule>
 
-  <rule id="132043" level="12">
+  <rule id="132043" level="3">
     <if_sid>131294</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>Objects Deleted from Malware Detection Exclusions: $(Description)</description>
@@ -392,7 +392,7 @@
     </mitre>
   </rule>
 
-  <rule id="132044" level="3">
+  <rule id="132044" level="12">
     <if_sid>131295</if_sid>
     <decoded_as>Veeam MP 13.1</decoded_as>
     <description>Malware Detection Exclusions List Updated: $(Description)</description>
