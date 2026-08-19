@@ -10,12 +10,50 @@
 <!-- 331 events, 213 unique field names) beyond the brief's starting set: -->
 <!-- VbrHostName/VbrVersion (311/331 events — envelope/header data present on -->
 <!-- nearly every event), plus Result and SourceType as broadly useful fields. -->
-<!-- This is a starting set, not exhaustive — Task 10's live SSH validation -->
-<!-- against real captured log lines is where this gets corrected/expanded. -->
+<!-- Task 10 live validation (real captured syslog from a 13.1 test manager) found -->
+<!-- TWO further critical bugs in the pre-Task-10 version of this file, both fixed here: -->
+<!-- 1) The prematch required "Veeam_MP - - [categoryId=..." contiguously, but the real -->
+<!--    wire format always inserts "[origin enterpriseId=\"...\"] [INF|WRN|ERR] " between -->
+<!--    "Veeam_MP - - " and "[categoryId=..." — so the old prematch NEVER matched any -->
+<!--    real event. Fixed below to account for the origin block and severity token. -->
+<!-- 2) categoryId is always "0" on the wire; the real event number lives in instanceId. -->
+<!--    The old decoder named its field EventID but populated it from categoryId's value -->
+<!--    (always 0), so EventID never matched any generic/field rule even after the -->
+<!--    prematch was fixed. EventID is now populated from instanceId's value. categoryId -->
+<!--    itself is dropped (non-capturing) since it carries no useful information; the -->
+<!--    severity token is captured as a new Severity field since it's real, -->
+<!--    directly-available data. -->
+<!-- 3) A capturing <prematch> with no companion <regex> is a config error on this -->
+<!--    Wazuh version (analysisd -t: "(2107): Decoder configuration error") — <order> -->
+<!--    must pair with a <regex> element's capture groups, not prematch's. The base -->
+<!--    decoder below now uses a non-capturing prematch purely to select the decoder, -->
+<!--    plus a separate <regex> to do the actual field extraction. -->
+<!-- 4) On this Wazuh version, a <regex> paired with its own <prematch> in the SAME -->
+<!--    decoder block (no <parent>) did not reliably populate <order> fields — tried -->
+<!--    both without and with an explicit offset="after_prematch", and confirmed via -->
+<!--    wazuh-logtest each time that Phase 2 decoding named the decoder correctly and -->
+<!--    extracted Description/VbrHostName/VbrVersion (via the child "Enhanced" decoders -->
+<!--    below), but EventID/Severity never appeared and no generic/field rule ever -->
+<!--    matched (all of them key off EventID). The pattern that IS proven to work here -->
+<!--    is a child decoder: <parent>Veeam MP 13.1</parent> plus a standalone <regex> -->
+<!--    with no offset, searching the full raw log line (exactly how the Enhanced -->
+<!--    decoders below already extract Description/VbrHostName/etc.). EventID/Severity -->
+<!--    extraction is restructured below to use that same proven pattern instead. -->
 
 <decoder name="Veeam MP 13.1">
-    <prematch type="pcre2">Veeam_MP - - \[categoryId=([^\s]+) instanceId=([^\s]+)</prematch>
-    <order>EventID, instanceId</order>
+    <prematch type="pcre2">Veeam_MP - - \[origin</prematch>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">\[categoryId=\d+ instanceId=([^\s]+)</regex>
+    <order>EventID</order>
+</decoder>
+
+<decoder name="Veeam MP 13.1 Enhanced">
+    <parent>Veeam MP 13.1</parent>
+    <regex type="pcre2">\[(INF|WRN|ERR)\] \[categoryId=</regex>
+    <order>Severity</order>
 </decoder>
 
 <decoder name="Veeam MP 13.1 Enhanced">
@@ -44,7 +82,7 @@
 
 <decoder name="Veeam MP 13.1 Enhanced">
     <parent>Veeam MP 13.1</parent>
-    <regex type="pcre2">UserName="([^"]+)</regex>
+    <regex type="pcre2">UserName="([^"]+)"</regex>
     <order>User</order>
 </decoder>
 

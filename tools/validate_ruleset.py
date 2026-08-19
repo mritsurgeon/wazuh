@@ -46,8 +46,12 @@ def check_id_ranges(generic_path: str, field_path: str) -> list[str]:
 
 def check_event_coverage(generic_path: str, csv_path: str) -> list[str]:
     tree = etree.parse(generic_path)
+    # EventID field values are anchored (^NNNNN$) as of Task 10's live validation fix,
+    # so a value like "200" can't substring-match a decoded EventID of "42200" — strip
+    # the anchors here to compare against the CSV's plain numeric event_id.
     covered = {
-        el.text for el in tree.findall(".//rule/field[@name='EventID']")
+        (el.text or "").strip("^$")
+        for el in tree.findall(".//rule/field[@name='EventID']")
     }
     with open(csv_path, newline="", encoding="utf-8") as f:
         expected = {row["event_id"] for row in csv.DictReader(f)}
