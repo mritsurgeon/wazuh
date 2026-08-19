@@ -1,1 +1,585 @@
-<group name="placeholder"></group>
+<!-- v13.1/Field_Veeam_Rules_13.1.xml -->
+<!-- Veeam Backup & Replication 13.1 -->
+<!-- Field-specific rules for the security-relevant event subset (Users, -->
+<!-- Credential Records, Malware Detection, Licenses, Security & Compliance -->
+<!-- Analyzer categories from the live 13.1 scrape). Each rule is chained to -->
+<!-- its generic counterpart via if_sid so one real event produces exactly -->
+<!-- one alert (see design spec: v12.1's Field_Veeam_Rules.xml and -->
+<!-- Generic_Veeam_rules.xml fire independently with no if_sid chaining, -->
+<!-- causing double alerts per event; this file fixes that). -->
+<!-- Object/State field matches are only added where the event's Description -->
+<!-- literally contains the "have been" (plural) construction the -->
+<!-- "Veeam MP 13.1 General" child decoder in v13.1/decoders_13.1.xml expects; -->
+<!-- for the rest, the decoder would never fire, so those rules rely on -->
+<!-- if_sid + decoded_as + $(Description) alone. -->
+
+<group name="Veeam_Backup_Replication_13.1_Security">
+  <rule id="132000" level="3">
+    <if_sid>131093</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Installed: $(Description)</description>
+  </rule>
+
+  <rule id="132001" level="6">
+    <if_sid>131094</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Expiring: $(Description)</description>
+  </rule>
+
+  <rule id="132002" level="6">
+    <if_sid>131095</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Expired: $(Description)</description>
+  </rule>
+
+  <rule id="132003" level="6">
+    <if_sid>131096</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Support Expiring: $(Description)</description>
+  </rule>
+
+  <rule id="132004" level="6">
+    <if_sid>131097</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Support Expired: $(Description)</description>
+  </rule>
+
+  <rule id="132005" level="3">
+    <if_sid>131098</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Grace Period Started: $(Description)</description>
+  </rule>
+
+  <rule id="132006" level="6">
+    <if_sid>131099</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Limit Exceeded: $(Description)</description>
+  </rule>
+
+  <rule id="132007" level="3">
+    <if_sid>131100</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Removed: $(Description)</description>
+    <field name="Object">licenses</field>
+    <field name="State">removed</field>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132008" level="3">
+    <if_sid>131120</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Credential Record Added: $(Description)</description>
+    <field name="Object">Credentials</field>
+    <field name="State">added</field>
+  </rule>
+
+  <rule id="132009" level="3">
+    <if_sid>131121</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Credential Record Updated: $(Description)</description>
+    <field name="Object">Credentials</field>
+    <field name="State">updated</field>
+    <mitre>
+      <id>T1098</id>
+    </mitre>
+  </rule>
+
+  <rule id="132010" level="6">
+    <if_sid>131122</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Credential Record Deleted: $(Description)</description>
+    <field name="Object">Credentials</field>
+    <field name="State">deleted</field>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+
+  <rule id="132011" level="3">
+    <if_sid>131191</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>User or Group Added: $(Description)</description>
+    <mitre>
+      <id>T1098</id>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132012" level="6">
+    <if_sid>131192</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Adding User or Group Failed: $(Description)</description>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+
+  <rule id="132013" level="3">
+    <if_sid>131193</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Custom Role Added: $(Description)</description>
+    <mitre>
+      <id>T1098</id>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132014" level="3">
+    <if_sid>131194</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Custom Role Updated: $(Description)</description>
+    <mitre>
+      <id>T1098</id>
+    </mitre>
+  </rule>
+
+  <rule id="132015" level="3">
+    <if_sid>131195</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Custom Role Deleted: $(Description)</description>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+
+  <rule id="132016" level="6">
+    <if_sid>131196</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>User or Group Deleted: $(Description)</description>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+
+  <rule id="132017" level="3">
+    <if_sid>131198</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Encryption Password Added: $(Description)</description>
+    <mitre>
+      <id>T1486</id>
+      <id>T1490</id>
+    </mitre>
+  </rule>
+
+  <rule id="132018" level="3">
+    <if_sid>131199</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Encryption Password Updated: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+      <id>T1486</id>
+    </mitre>
+  </rule>
+
+  <rule id="132019" level="6">
+    <if_sid>131200</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Encryption Password Deleted: $(Description)</description>
+    <mitre>
+      <id>T1486</id>
+    </mitre>
+  </rule>
+
+  <rule id="132020" level="8">
+    <if_sid>131201</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Encryption Password Verified: $(Description)</description>
+    <mitre>
+      <id>T1486</id>
+    </mitre>
+  </rule>
+
+  <rule id="132021" level="3">
+    <if_sid>131202</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Encryption Password Assigned: $(Description)</description>
+  </rule>
+
+  <rule id="132022" level="3">
+    <if_sid>131203</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>SSH Credentials Changed: $(Description)</description>
+    <field name="Object">SSH options for credentials</field>
+    <field name="State">updated</field>
+    <mitre>
+      <id>T1098</id>
+    </mitre>
+  </rule>
+
+  <rule id="132023" level="3">
+    <if_sid>131240</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Multi-Factor Authentication Enabled: $(Description)</description>
+  </rule>
+
+  <rule id="132024" level="3">
+    <if_sid>131241</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Multi-Factor Authentication Disabled: $(Description)</description>
+    <mitre>
+      <id>T1556</id>
+    </mitre>
+  </rule>
+
+  <rule id="132025" level="3">
+    <if_sid>131242</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Multi-Factor Authentication Token Revoked: $(Description)</description>
+    <mitre>
+      <id>T1586</id>
+      <id>T1111</id>
+    </mitre>
+  </rule>
+
+  <rule id="132026" level="3">
+    <if_sid>131243</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Multi-Factor Authentication for User Enabled: $(Description)</description>
+  </rule>
+
+  <rule id="132027" level="3">
+    <if_sid>131244</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Multi-Factor Authentication for User Disabled: $(Description)</description>
+    <mitre>
+      <id>T1556</id>
+    </mitre>
+  </rule>
+
+  <rule id="132028" level="3">
+    <if_sid>131245</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Invalid Code for Multi-Factor Authentication Entered: $(Description)</description>
+    <mitre>
+      <id>T1586</id>
+      <id>T1111</id>
+    </mitre>
+  </rule>
+
+  <rule id="132029" level="3">
+    <if_sid>131246</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Allowed Attempts for Multi-Factor Authentication Exceeded: $(Description)</description>
+    <mitre>
+      <id>T1586</id>
+    </mitre>
+  </rule>
+
+  <rule id="132030" level="3">
+    <if_sid>131247</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Code for Multi-Factor Authentication Already Used: $(Description)</description>
+    <mitre>
+      <id>T1586</id>
+    </mitre>
+  </rule>
+
+  <rule id="132031" level="3">
+    <if_sid>131265</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>License Report Created: $(Description)</description>
+  </rule>
+
+  <rule id="132032" level="3">
+    <if_sid>131266</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Automatic License Update Disabled: $(Description)</description>
+  </rule>
+
+  <rule id="132033" level="3">
+    <if_sid>131271</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Proactive Support Disabled: $(Description)</description>
+  </rule>
+
+  <rule id="132034" level="12">
+    <if_sid>131280</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Malware Activity Detected: $(Description)</description>
+    <mitre>
+      <id>T1204</id>
+      <id>T1486</id>
+    </mitre>
+  </rule>
+
+  <rule id="132035" level="3">
+    <if_sid>131281</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Object Marked as Clean: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132036" level="3">
+    <if_sid>131282</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Object Automatically Marked as Clean: $(Description)</description>
+  </rule>
+
+  <rule id="132037" level="6">
+    <if_sid>131286</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Attempt To Update Security Object Failed: $(Description)</description>
+    <mitre>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132038" level="3">
+    <if_sid>131289</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Malware Detection Session Started: $(Description)</description>
+  </rule>
+
+  <rule id="132039" level="8">
+    <if_sid>131290</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Malware Detection Session Finished: $(Description)</description>
+  </rule>
+
+  <rule id="132040" level="12">
+    <if_sid>131291</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Restore Point Marked as Infected: $(Description)</description>
+    <mitre>
+      <id>T1204</id>
+      <id>T1486</id>
+    </mitre>
+  </rule>
+
+  <rule id="132041" level="3">
+    <if_sid>131292</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Restore Point Marked as Clean: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132042" level="3">
+    <if_sid>131293</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Objects Added to Malware Detection Exclusions: $(Description)</description>
+    <field name="Object">objects</field>
+    <field name="State">added into the malware detection exclusions list</field>
+    <mitre>
+      <id>T1565</id>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132043" level="3">
+    <if_sid>131294</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Objects Deleted from Malware Detection Exclusions: $(Description)</description>
+    <field name="Object">objects</field>
+    <field name="State">removed from the malware detection exclusions list</field>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132044" level="3">
+    <if_sid>131295</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Malware Detection Exclusions List Updated: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132045" level="3">
+    <if_sid>131296</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Malware Detection Settings Updated: $(Description)</description>
+    <field name="Object">Malware detection settings</field>
+    <field name="State">changed</field>
+    <mitre>
+      <id>T1565</id>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132046" level="3">
+    <if_sid>131297</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>KMS Server Added: $(Description)</description>
+  </rule>
+
+  <rule id="132047" level="6">
+    <if_sid>131298</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>KMS Server Deleted: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+      <id>T1485</id>
+      <id>T1490</id>
+    </mitre>
+  </rule>
+
+  <rule id="132048" level="3">
+    <if_sid>131299</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>KMS Server Settings Updated: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132049" level="3">
+    <if_sid>131300</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Enabled: $(Description)</description>
+  </rule>
+
+  <rule id="132050" level="3">
+    <if_sid>131301</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Disabled: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132051" level="3">
+    <if_sid>131302</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Request Created: $(Description)</description>
+    <mitre>
+      <id>T1485</id>
+    </mitre>
+  </rule>
+
+  <rule id="132052" level="3">
+    <if_sid>131303</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Request Approved: $(Description)</description>
+  </rule>
+
+  <rule id="132053" level="3">
+    <if_sid>131304</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Request Rejected: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132054" level="3">
+    <if_sid>131305</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Four-Eyes Authorization Request Expired: $(Description)</description>
+    <mitre>
+      <id>T1565</id>
+    </mitre>
+  </rule>
+
+  <rule id="132055" level="8">
+    <if_sid>131306</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>KMS Key Rotation Job Finished: $(Description)</description>
+  </rule>
+
+  <rule id="132056" level="3">
+    <if_sid>131307</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>SAML Settings Updated: $(Description)</description>
+    <mitre>
+      <id>T1484.002</id>
+      <id>T1556</id>
+    </mitre>
+  </rule>
+
+  <rule id="132057" level="3">
+    <if_sid>131308</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Security &amp; Compliance Analyzer Session Finished: $(Description)</description>
+  </rule>
+
+  <rule id="132058" level="3">
+    <if_sid>131309</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Security &amp; Compliance Analyzer Settings Updated: $(Description)</description>
+    <mitre>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+
+  <rule id="132059" level="3">
+    <if_sid>131310</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Best Practice Suppressed: $(Description)</description>
+  </rule>
+
+  <rule id="132060" level="3">
+    <if_sid>131311</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Best Practice Reset: $(Description)</description>
+  </rule>
+
+  <rule id="132061" level="3">
+    <if_sid>131318</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Token Request Approved: $(Description)</description>
+  </rule>
+
+  <rule id="132062" level="6">
+    <if_sid>131319</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Token Request Rejected: $(Description)</description>
+  </rule>
+
+  <rule id="132063" level="6">
+    <if_sid>131320</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>User Authorization Denied: $(Description)</description>
+  </rule>
+
+  <rule id="132064" level="3">
+    <if_sid>131321</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>User Authorization Granted: $(Description)</description>
+  </rule>
+
+  <rule id="132065" level="3">
+    <if_sid>131322</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Password Change Required: $(Description)</description>
+  </rule>
+
+  <rule id="132066" level="3">
+    <if_sid>131323</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Token Chain Revoked: $(Description)</description>
+  </rule>
+
+  <rule id="132067" level="3">
+    <if_sid>131324</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Resource Access Denied: $(Description)</description>
+  </rule>
+
+  <rule id="132068" level="3">
+    <if_sid>131328</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Entropy Analysis Session Started: $(Description)</description>
+  </rule>
+
+  <rule id="132069" level="3">
+    <if_sid>131329</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Entropy Analysis Session Finished: $(Description)</description>
+  </rule>
+
+  <rule id="132070" level="3">
+    <if_sid>131330</if_sid>
+    <decoded_as>Veeam MP 13.1</decoded_as>
+    <description>Entropy Analysis Results Downloaded: $(Description)</description>
+  </rule>
+
+</group>
