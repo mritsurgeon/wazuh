@@ -185,8 +185,14 @@ def fetch_event_detail(event_id: str) -> dict:
 
 def _serialize_parameters(parameters: list[dict]) -> str:
     """Serialize a list of {"name", "example"} dicts into the CSV-friendly
-    "Name1=Example1;Name2=Example2" form used by the `parameters` column."""
-    return ";".join(f"{p['name']}={p['example']}" for p in parameters)
+    `parameters` column value.
+
+    The site's own "Example" cell text already embeds the parameter name
+    (e.g. `JobSessionID="c0d93abe-..."`, not just the bare value), so the
+    column is just the Example values joined with ";" -- prefixing each
+    with its own name too would duplicate it (`JobSessionID=JobSessionID=...`).
+    """
+    return ";".join(p["example"] for p in parameters)
 
 
 def enrich_events_with_details(events: list[dict], delay_seconds: float = 0.5) -> list[dict]:

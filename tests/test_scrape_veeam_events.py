@@ -141,7 +141,7 @@ def test_enrich_events_with_details_merges_and_rate_limits(monkeypatch):
     assert by_id["110"]["category"] == "Backup > Jobs"
     assert by_id["110"]["message_details"] == "msg 110"
     assert by_id["110"]["severity"] == "Info"
-    assert by_id["110"]["parameters"] == "A=A_val"
+    assert by_id["110"]["parameters"] == "A_val"
     assert by_id["114"]["parameters"] == ""
     assert sleep_calls == [0.5, 0.5]
 
